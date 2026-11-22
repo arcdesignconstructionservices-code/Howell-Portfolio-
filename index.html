@@ -1,119 +1,210 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hwl+ — AI Development Studio</title>
-  <meta name="description" content="Hwl+ builds custom AI products, automations, and intelligent software for businesses.">
+  <title>Howell — AI &amp; Systems Developer · Hwl+</title>
+  <meta name="description" content="Howell builds honest, inviting, warm software: AI-assisted internal platforms, dispatch tooling and WordPress sites. Studio: Hwl+ with Gab.">
+  <meta name="theme-color" content="#f6f2ec">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23b9a595'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Georgia' font-style='italic' fill='%23fff'%3EH%2B%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="progress" id="progress"></div>
   <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
 
-  <header class="nav">
-    <a class="logo" href="#top"><span class="logo-mark">H</span>Hwl<span class="grad">+</span></a>
-    <nav>
-      <a href="#services">Services</a>
+  <header class="nav" id="nav">
+    <a class="logo" href="#top" aria-label="Hwl+ home"><em>Hwl</em><span>+</span></a>
+    <nav aria-label="Primary">
+      <a href="#systems">Systems</a>
       <a href="#work">Work</a>
-      <a href="#process">Process</a>
-      <a href="#team">Team</a>
-      <a class="btn btn-small" href="#contact">Let's talk</a>
+      <a href="#web">Websites</a>
+      <a href="#studio">Studio</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <button class="theme" id="theme" aria-label="Toggle evening mode"><i></i></button>
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
-      <p class="eyebrow">AI Development Studio</p>
-      <h1>We build <span class="grad" id="typed">intelligent software</span><br>that actually ships.</h1>
-      <p class="lead">Custom AI products, automations, and web platforms for teams that want real results, not demos.</p>
-      <div class="cta">
-        <a class="btn" href="#work">See our work</a>
-        <a class="btn btn-ghost" href="#contact">Start a project</a>
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Hwl+ &nbsp;·&nbsp; AI &amp; Systems Developer</p>
+        <h1 class="split" aria-label="Intelligent systems, built with care.">
+          <span class="line"><span>Intelligent</span></span>
+          <span class="line"><span>systems, built</span></span>
+          <span class="line"><span>with <em>care.</em></span></span>
+        </h1>
+        <p class="lead reveal">I'm Howell. I design and ship the software that keeps real operations running: dispatch planners, SOP libraries, ticketing, registries and the websites around them.</p>
+
+        <p class="values reveal" aria-label="honest, inviting, warm">
+          <span>honest</span>
+          <span class="circled">inviting
+            <svg viewBox="0 0 160 70" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="80" cy="35" rx="76" ry="29" /></svg>
+          </span>
+          <span>warm</span>
+        </p>
+
+        <div class="cta reveal">
+          <a class="btn magnetic" href="#work"><span>See the work</span><b>→</b></a>
+          <a class="btn ghost magnetic" href="#contact"><span>Start a project</span></a>
+        </div>
       </div>
-      <ul class="stats">
-        <li><strong data-count="20">0</strong><span>Projects delivered</span></li>
-        <li><strong data-count="12">0</strong><span>Happy clients</span></li>
-        <li><strong data-count="2">0</strong><span>Founders, hands-on</span></li>
-      </ul>
+
+      <figure class="portrait reveal" id="portrait">
+        <div class="arch">
+          <img src="assets/howell.jpeg" alt="Portrait of Howell" width="800" height="800">
+        </div>
+        <span class="orbit" aria-hidden="true"></span>
+        <figcaption><em>Howell</em> — Founder, Hwl+</figcaption>
+        <span class="chip c1">Torero Global Outsourcing Corp.</span>
+        <span class="chip c2">Full-stack · AI-assisted</span>
+      </figure>
     </section>
 
-    <section id="services" class="section">
-      <h2>What we do</h2>
-      <div class="grid">
-        <article class="card"><div class="icon">🤖</div><h3>AI Agents &amp; Chatbots</h3><p>Support, sales, and internal assistants trained on your own data and wired into your tools.</p></article>
-        <article class="card"><div class="icon">⚡</div><h3>Workflow Automation</h3><p>Replace repetitive manual work — invoices, reports, onboarding — with reliable AI pipelines.</p></article>
-        <article class="card"><div class="icon">🧠</div><h3>LLM &amp; RAG Apps</h3><p>Search and Q&amp;A over documents, knowledge bases, and databases using the latest language models.</p></article>
-        <article class="card"><div class="icon">🌐</div><h3>Web &amp; Mobile Apps</h3><p>Fast, polished full-stack products: dashboards, portals, and SaaS from idea to launch.</p></article>
-        <article class="card"><div class="icon">📊</div><h3>Data &amp; Analytics</h3><p>Dashboards, forecasting, and insights that turn messy data into decisions.</p></article>
-        <article class="card"><div class="icon">🔧</div><h3>AI Integration</h3><p>Add AI features to your existing product, with guardrails, monitoring, and cost control.</p></article>
+    <!-- NUMBERS -->
+    <ul class="numbers reveal">
+      <li><strong data-count="6">0</strong><span>internal platforms shipped</span></li>
+      <li><strong data-count="2">0</strong><span>WordPress sites launched</span></li>
+      <li><strong data-count="1">0</strong><span>single sign-on gateway tying it together</span></li>
+      <li><strong data-count="2">0</strong><span>founders, hands-on</span></li>
+    </ul>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>React</span><span>TypeScript</span><span>TanStack Start</span><span>PostgreSQL</span><span>Railway</span><span>Tailwind</span><span>Supabase</span><span>Docker</span><span>Zod</span><span>Recharts</span><span>WordPress</span><span>PWA</span><span>SSO</span>
+        <span>React</span><span>TypeScript</span><span>TanStack Start</span><span>PostgreSQL</span><span>Railway</span><span>Tailwind</span><span>Supabase</span><span>Docker</span><span>Zod</span><span>Recharts</span><span>WordPress</span><span>PWA</span><span>SSO</span>
+      </div>
+    </div>
+
+    <!-- SYSTEMS MAP -->
+    <section id="systems" class="section">
+      <header class="sec-head reveal">
+        <p class="eyebrow">01 — The ecosystem</p>
+        <h2>One gateway. <em>Six tools</em> that talk to each other.</h2>
+        <p class="sub">Everything below signs in through a single LMS Gateway. Hover or tap a node to see what each platform does.</p>
+      </header>
+
+      <div class="map-wrap reveal">
+        <svg id="map" viewBox="0 0 900 520" role="img" aria-label="Diagram of six platforms connected to the LMS Gateway"></svg>
+        <aside class="map-card" id="mapCard" aria-live="polite"></aside>
       </div>
     </section>
 
+    <!-- WORK -->
     <section id="work" class="section">
-      <h2>Selected work</h2>
-      <p class="sub">Sample projects — replace these with your real case studies.</p>
-      <div class="grid work">
-        <article class="card project">
-          <span class="tag">AI Assistant</span>
-          <h3>SupportPilot</h3>
-          <p>Customer-support agent that resolves 60% of tickets automatically using company docs.</p>
-          <p class="stack">Python · OpenAI · RAG · React</p>
-        </article>
-        <article class="card project">
-          <span class="tag">Automation</span>
-          <h3>InvoiceFlow</h3>
-          <p>Reads invoices, extracts line items, and syncs to accounting software with no manual entry.</p>
-          <p class="stack">Node.js · Vision AI · PostgreSQL</p>
-        </article>
-        <article class="card project">
-          <span class="tag">Web Platform</span>
-          <h3>WorkBlocks LMS</h3>
-          <p>Learning platform with AI-generated lessons, quizzes, and progress tracking.</p>
-          <p class="stack">Next.js · Claude API · Supabase</p>
-        </article>
-        <article class="card project">
-          <span class="tag">Business Tools</span>
-          <h3>StockSense</h3>
-          <p>Inventory system with demand forecasting and automatic low-stock alerts.</p>
-          <p class="stack">TypeScript · ML · Tailwind</p>
-        </article>
+      <header class="sec-head reveal">
+        <p class="eyebrow">02 — Selected work</p>
+        <h2>Built at <em>Torero Global Outsourcing Corp.</em></h2>
+        <p class="sub">Every tool here was designed and built by me for daily operations use. Open a row for the details.</p>
+      </header>
+      <ol class="index" id="index"></ol>
+    </section>
+
+    <!-- WEBSITES -->
+    <section id="web" class="section">
+      <header class="sec-head reveal">
+        <p class="eyebrow">03 — Websites</p>
+        <h2>Public faces, built on <em>WordPress</em>.</h2>
+      </header>
+      <div class="sites">
+        <a class="site reveal" href="https://tgocorp.com/" target="_blank" rel="noopener">
+          <div class="browser"><i></i><i></i><i></i><span>tgocorp.com</span></div>
+          <div class="site-body">
+            <h3>Torero Global Outsourcing Corp.</h3>
+            <p>The company website: who we are, what we do and how to reach us.</p>
+            <span class="visit">Visit site <b>↗</b></span>
+          </div>
+        </a>
+        <a class="site reveal" href="https://lastmilesupport.com/" target="_blank" rel="noopener">
+          <div class="browser"><i></i><i></i><i></i><span>lastmilesupport.com</span></div>
+          <div class="site-body">
+            <h3>Last Mile Support</h3>
+            <p>The brand site for the last-mile dispatch support service, and the home domain for its internal tools.</p>
+            <span class="visit">Visit site <b>↗</b></span>
+          </div>
+        </a>
       </div>
     </section>
 
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <header class="sec-head reveal">
+        <p class="eyebrow">04 — What Hwl+ does</p>
+        <h2>Software that feels <em>personal</em>, and works hard.</h2>
+      </header>
+      <div class="services">
+        <article class="reveal"><span>i.</span><h3>AI agents &amp; automation</h3><p>Assistants and pipelines that take repetitive work off your team's plate, with guardrails and cost control.</p></article>
+        <article class="reveal"><span>ii.</span><h3>Internal platforms</h3><p>Dashboards, planners, registries and portals with proper roles, audit trails and single sign-on.</p></article>
+        <article class="reveal"><span>iii.</span><h3>Data &amp; integrations</h3><p>Safe, validated imports and syncs: held when something looks wrong, applied when it's right.</p></article>
+        <article class="reveal"><span>iv.</span><h3>Websites &amp; PWAs</h3><p>Fast WordPress sites and installable apps that feel native on phones.</p></article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
     <section id="process" class="section">
-      <h2>How we work</h2>
+      <header class="sec-head reveal">
+        <p class="eyebrow">05 — How we work</p>
+        <h2>Honest from the <em>first call</em>.</h2>
+      </header>
       <ol class="steps">
-        <li><span>01</span><h3>Discover</h3><p>We learn your goals, data, and constraints.</p></li>
-        <li><span>02</span><h3>Prototype</h3><p>A working proof of concept in days, not months.</p></li>
-        <li><span>03</span><h3>Build</h3><p>Production-grade code with tests and clear docs.</p></li>
-        <li><span>04</span><h3>Launch &amp; Improve</h3><p>Deploy, monitor, and keep iterating with you.</p></li>
+        <li class="reveal"><b>01</b><h3>Listen</h3><p>We learn how the work really happens, on the floor, not on paper.</p></li>
+        <li class="reveal"><b>02</b><h3>Sketch</h3><p>A clickable prototype in days so we can argue about something real.</p></li>
+        <li class="reveal"><b>03</b><h3>Build</h3><p>Production code, tested, documented and deployed.</p></li>
+        <li class="reveal"><b>04</b><h3>Tend</h3><p>Monitor, learn and keep improving after launch.</p></li>
       </ol>
     </section>
 
-    <section id="team" class="section">
-      <h2>The team</h2>
-      <div class="grid team">
-        <article class="card person"><div class="avatar">H</div><h3>Howell</h3><p class="role">Co-founder · Full-stack &amp; AI Engineer</p><p>Designs and builds the systems behind every product.</p></article>
-        <article class="card person"><div class="avatar alt">G</div><h3>Gab</h3><p class="role">Co-founder · Product &amp; Engineering</p><p>Turns client needs into clear, shippable solutions.</p></article>
+    <!-- STUDIO -->
+    <section id="studio" class="section">
+      <header class="sec-head reveal">
+        <p class="eyebrow">06 — The studio</p>
+        <h2>Two people. <em>One standard.</em></h2>
+      </header>
+      <div class="team">
+        <article class="person reveal">
+          <img src="assets/howell.jpeg" alt="Howell" loading="lazy">
+          <div>
+            <h3><em>Howell</em></h3>
+            <p class="role">Founder · Full-stack &amp; AI developer</p>
+            <p>Architects and builds the systems, from database to interface to deployment.</p>
+          </div>
+        </article>
+        <article class="person reveal">
+          <div class="mono">G</div>
+          <div>
+            <h3><em>Gab</em></h3>
+            <p class="role">Co-founder · Product &amp; delivery</p>
+            <p>Turns client needs into clear, shippable plans and keeps projects moving.</p>
+          </div>
+        </article>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section contact">
-      <h2>Have an idea? Let's build it.</h2>
-      <p class="sub">Tell us what you're working on and we'll reply within one business day.</p>
-      <form id="form" class="form">
-        <input name="name" placeholder="Your name" required>
-        <input name="email" type="email" placeholder="Email" required>
-        <textarea name="message" rows="4" placeholder="Tell us about your project" required></textarea>
-        <button class="btn" type="submit">Send message</button>
+      <header class="sec-head center reveal">
+        <p class="eyebrow">07 — Say hello</p>
+        <h2>Have something to <em>build?</em></h2>
+        <p class="sub">Tell me a little about it. I reply within one business day.</p>
+      </header>
+      <form id="form" class="form reveal">
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label class="full">Project<textarea name="message" rows="4" required></textarea></label>
+        <button class="btn magnetic" type="submit"><span>Send message</span><b>→</b></button>
       </form>
     </section>
   </main>
 
-  <footer>© <span id="year"></span> Hwl+ · Built by Howell &amp; Gab</footer>
+  <footer>
+    <span>© <span id="year"></span> Hwl+ · Howell &amp; Gab</span>
+    <span class="values-mini"><em>honest · inviting · warm</em></span>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
