@@ -1,7 +1,8 @@
-/* ---------- Data: the six platforms built at Torero Global Outsourcing Corp. ---------- */
-const PROJECTS = [
+/* ---------- Works: built at Torero Global Outsourcing Corp. ---------- */
+const WORKS = [
   {
-    name: 'Driver Registry', short: 'Registry', kind: 'Data platform',
+    type: 'platform', name: 'Driver Registry', short: 'Registry', mono: 'DR', kind: 'Data platform',
+    colors: ['#0b2a6b', '#1d4ed8'],
     blurb: 'One trusted record per driver for every tool, synced daily and protected by safety checks.',
     points: [
       'IDs link drivers, never names, so records cannot be mixed up.',
@@ -11,7 +12,8 @@ const PROJECTS = [
     stack: ['TanStack Start', 'React', 'PostgreSQL', 'Docker', 'Railway']
   },
   {
-    name: 'Send Back Planner', short: 'Planner', kind: 'Dispatch command center',
+    type: 'platform', name: 'Send Back Planner', short: 'Planner', mono: 'SB', kind: 'Dispatch command center',
+    colors: ['#071230', '#2563eb'],
     blurb: 'Prepare, monitor and publish daily send-back plans so every returned package is accounted for.',
     points: [
       'Shift telemetry, risk monitoring and notifications in one view.',
@@ -21,17 +23,19 @@ const PROJECTS = [
     stack: ['TanStack Start', 'React', 'Recharts', 'PostgreSQL', 'Zod']
   },
   {
-    name: 'Last Mile Library', short: 'Library', kind: 'Interactive SOP library',
+    type: 'platform', name: 'Last Mile Library', short: 'Library', mono: 'LL', kind: 'Interactive SOP library',
+    colors: ['#0a1a3f', '#3b82f6'],
     blurb: 'A digital library where every department is a book and every SOP is a volume you open.',
     points: [
       'Designed as an architectural library, not another file manager.',
       'Upload, add, edit and delete PDF and Word documents per department.',
-      'Gateway sign-in, usage-based "Most viewed" and recently viewed shelves.'
+      'Gateway sign-in, plus "Most viewed" and recently viewed shelves.'
     ],
     stack: ['TanStack Start', 'React', 'Supabase', 'Tailwind', 'SSO']
   },
   {
-    name: 'TGO Ticketing System', short: 'Tickets', kind: 'Ticketing · PWA',
+    type: 'platform', name: 'TGO Ticketing System', short: 'Tickets', mono: 'TK', kind: 'Ticketing · PWA',
+    colors: ['#0b1f55', '#1e40af'],
     blurb: 'Internal support ticketing that installs on phones as an app.',
     points: [
       'Installable PWA, packaged as an Android app through a Trusted Web Activity.',
@@ -41,7 +45,8 @@ const PROJECTS = [
     stack: ['TanStack Start', 'PWA', 'Android TWA', 'PostgreSQL', 'Nixpacks']
   },
   {
-    name: 'Dispatch Coach Central', short: 'Coaching', kind: 'Coaching management',
+    type: 'platform', name: 'Dispatch Coach Central', short: 'Coaching', mono: 'DC', kind: 'Coaching management',
+    colors: ['#02153b', '#1d4ed8'],
     blurb: 'A coaching hub that helps dispatch leads track performance and follow up with the right people.',
     points: [
       'Clear performance tiers: good, warning and critical.',
@@ -51,7 +56,8 @@ const PROJECTS = [
     stack: ['TanStack Start', 'React', 'Tailwind', 'PostgreSQL', 'SSO']
   },
   {
-    name: 'Workblocks', short: 'Workblocks', kind: 'Capacity reporting',
+    type: 'platform', name: 'Workblocks', short: 'Workblocks', mono: 'WB', kind: 'Capacity reporting',
+    colors: ['#0a2c63', '#60a5fa'],
     blurb: 'Turns a monthly plan export into a validated snapshot and the weekly capacity report.',
     points: [
       'Import, validate and save a snapshot of the plan.',
@@ -59,108 +65,114 @@ const PROJECTS = [
       'Password-protected deletes and automatic table setup on first run.'
     ],
     stack: ['TanStack Start', 'React', 'PostgreSQL', 'Recharts', 'Railway']
+  },
+  {
+    type: 'site', name: 'tgocorp.com', mono: 'TGO', kind: 'WordPress website',
+    colors: ['#05070d', '#0b2a6b'], url: 'https://tgocorp.com/',
+    blurb: 'The company website for Torero Global Outsourcing Corp.: who they are, what they do and how to reach them.',
+    points: ['Designed and built on WordPress.', 'Public face of the company.'],
+    stack: ['WordPress']
+  },
+  {
+    type: 'site', name: 'lastmilesupport.com', mono: 'LMS', kind: 'WordPress website',
+    colors: ['#05070d', '#1d4ed8'], url: 'https://lastmilesupport.com/',
+    blurb: 'The brand website for Last Mile Support, and the home domain for its internal tools.',
+    points: ['Designed and built on WordPress.', 'Domain shared with the single sign-on gateway and tools.'],
+    stack: ['WordPress']
   }
 ];
+const PLATFORMS = WORKS.filter(w => w.type === 'platform');
 
 /* ---------- Helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
 const NS = 'http://www.w3.org/2000/svg';
-const el = (tag, attrs = {}, parent) => {
+const svgEl = (tag, attrs = {}, parent) => {
   const n = document.createElementNS(NS, tag);
   for (const k in attrs) n.setAttribute(k, attrs[k]);
   parent && parent.appendChild(n);
   return n;
 };
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 $('#year').textContent = new Date().getFullYear();
 
-/* ---------- Theme ---------- */
-const root = document.documentElement;
-const saved = localStorage.getItem('theme');
-if (saved) root.dataset.theme = saved;
-$('#theme').addEventListener('click', () => {
-  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  root.dataset.theme = next;
-  localStorage.setItem('theme', next);
-  drawBg();
+/* ---------- Work cards + modal ---------- */
+const cards = $('#cards'), modal = $('#modal');
+WORKS.forEach((w, i) => {
+  const b = document.createElement('button');
+  b.className = 'work reveal';
+  b.dataset.type = w.type;
+  b.style.setProperty('--c1', w.colors[0]);
+  b.style.setProperty('--c2', w.colors[1]);
+  b.innerHTML = `
+    <div class="cover"><span class="num">${String(i + 1).padStart(2, '0')}</span><span class="mono">${w.mono}</span></div>
+    <div class="body">
+      <span class="tag">${w.kind}</span>
+      <h3>${w.name}</h3>
+      <p>${w.blurb}</p>
+      <span class="open">${w.url ? 'View details' : 'Open case'} <b>→</b></span>
+    </div>`;
+  b.addEventListener('click', () => openWork(w));
+  cards.appendChild(b);
 });
 
-/* ---------- Work index ---------- */
-const index = $('#index');
-PROJECTS.forEach((p, i) => {
-  const li = document.createElement('li');
-  li.className = 'row reveal';
-  const n = String(i + 1).padStart(2, '0');
-  li.innerHTML = `
-    <button class="row-head" aria-expanded="false">
-      <span class="n">${n}</span>
-      <h3>${p.name}</h3>
-      <span class="kind">${p.kind}</span>
-      <span class="plus" aria-hidden="true">+</span>
-    </button>
-    <div class="row-body"><div>
-      <div class="detail">
-        <span></span>
-        <div><p>${p.blurb}</p><ul>${p.points.map(x => `<li>${x}</li>`).join('')}</ul></div>
-        <div class="tags">${p.stack.map(s => `<span>${s}</span>`).join('')}</div>
-      </div>
-    </div></div>`;
-  const btn = $('.row-head', li);
-  btn.addEventListener('click', () => {
-    const open = !li.classList.contains('open');
-    index.querySelectorAll('.row.open').forEach(r => {
-      r.classList.remove('open'); $('.row-head', r).setAttribute('aria-expanded', 'false');
-    });
-    if (open) { li.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
-    setActiveNode(open ? i : -1);
-  });
-  index.appendChild(li);
+function openWork(w) {
+  $('#mKind').textContent = w.kind;
+  $('#mTitle').textContent = w.name;
+  $('#mBlurb').textContent = w.blurb;
+  $('#mPoints').innerHTML = w.points.map(p => `<li>${p}</li>`).join('');
+  $('#mStack').innerHTML = w.stack.map(s => `<span>${s}</span>`).join('');
+  const cover = $('#mCover');
+  cover.style.setProperty('--c1', w.colors[0]);
+  cover.style.setProperty('--c2', w.colors[1]);
+  cover.innerHTML = `<span class="mono">${w.mono}</span>`;
+  const link = $('#mLink');
+  link.hidden = !w.url;
+  if (w.url) link.href = w.url;
+  modal.showModal();
+}
+$('#mClose').addEventListener('click', () => modal.close());
+modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+
+$('#filters').addEventListener('click', e => {
+  const btn = e.target.closest('button'); if (!btn) return;
+  document.querySelectorAll('#filters button').forEach(x => x.classList.toggle('on', x === btn));
+  document.querySelectorAll('.work').forEach(c => c.classList.toggle('hide', btn.dataset.f !== 'all' && c.dataset.type !== btn.dataset.f));
 });
 
 /* ---------- Ecosystem map ---------- */
-const svg = $('#map');
-const card = $('#mapCard');
-const CX = 450, CY = 260, RX = 330, RY = 175;
-const nodes = [];
+const svg = $('#map'), mapCard = $('#mapCard');
+const CX = 450, CY = 260, RX = 330, RY = 175, nodes = [];
+const linkLayer = svgEl('g', {}, svg);
+const core = svgEl('g', { class: 'core' }, svg);
+svgEl('circle', { class: 'ring', cx: CX, cy: CY, r: 60 }, core);
+svgEl('circle', { cx: CX, cy: CY, r: 60 }, core);
+svgEl('text', { x: CX, y: CY - 3 }, core).textContent = 'LMS';
+svgEl('text', { x: CX, y: CY + 14 }, core).textContent = 'GATEWAY';
 
-const defs = el('defs', {}, svg);
-// links first so nodes sit on top
-const linkLayer = el('g', {}, svg);
-const core = el('g', { class: 'core' }, svg);
-el('circle', { class: 'ring', cx: CX, cy: CY, r: 60 }, core);
-el('circle', { cx: CX, cy: CY, r: 60 }, core);
-el('text', { x: CX, y: CY - 3 }, core).textContent = 'LMS';
-el('text', { x: CX, y: CY + 15 }, core).textContent = 'GATEWAY';
-
-PROJECTS.forEach((p, i) => {
-  const a = (-90 + i * (360 / PROJECTS.length)) * Math.PI / 180;
+PLATFORMS.forEach((p, i) => {
+  const a = (-90 + i * (360 / PLATFORMS.length)) * Math.PI / 180;
   const x = CX + RX * Math.cos(a), y = CY + RY * Math.sin(a);
-  const link = el('path', { class: 'link', d: `M${CX},${CY} L${x},${y}` }, linkLayer);
-  const g = el('g', { class: 'node', tabindex: 0, role: 'button', 'aria-label': p.name }, svg);
-  el('circle', { cx: x, cy: y, r: 42 }, g);
-  el('text', { class: 'num', x, y: y + 7 }, g).textContent = ['i', 'ii', 'iii', 'iv', 'v', 'vi'][i];
-  el('text', { x, y: y + (y > CY ? 70 : -56) }, g).textContent = p.short.toUpperCase();
+  const link = svgEl('path', { class: 'link pulse', d: `M${CX},${CY} L${x},${y}` }, linkLayer);
+  const g = svgEl('g', { class: 'node', tabindex: 0, role: 'button', 'aria-label': p.name }, svg);
+  svgEl('circle', { cx: x, cy: y, r: 42 }, g);
+  svgEl('text', { class: 'nn', x, y: y + 8 }, g).textContent = p.mono;
+  svgEl('text', { x, y: y + (y > CY ? 70 : -56) }, g).textContent = p.short.toUpperCase();
   nodes.push({ g, link });
-  const show = () => setActiveNode(i, true);
+  const show = () => setNode(i);
   g.addEventListener('mouseenter', show);
   g.addEventListener('focus', show);
   g.addEventListener('click', show);
 });
 
-function setActiveNode(i, fromMap) {
-  nodes.forEach((n, k) => {
-    n.g.classList.toggle('active', k === i);
-    n.link.classList.toggle('pulse', k === i);
-  });
-  const p = PROJECTS[i] || { name: 'LMS Gateway', kind: 'Single sign-on', blurb: 'One login for every tool. Each app checks your session and your access to that specific tool, and locks itself if the gateway is missing.' };
-  card.classList.remove('swap'); void card.offsetWidth; card.classList.add('swap');
-  card.innerHTML = `<span class="k">${p.kind}</span><h3>${p.name}</h3><p>${p.blurb}</p>`;
+function setNode(i) {
+  nodes.forEach((n, k) => n.g.classList.toggle('active', k === i));
+  const p = PLATFORMS[i] || { name: 'LMS Gateway', kind: 'Single sign-on', blurb: 'One login for every tool. Each app checks your session and your access to that specific tool, and locks itself if the gateway is missing.' };
+  mapCard.classList.remove('swap'); void mapCard.offsetWidth; mapCard.classList.add('swap');
+  mapCard.innerHTML = `<span class="tag">${p.kind}</span><h3>${p.name}</h3><p>${p.blurb}</p>`;
 }
-setActiveNode(-1);
-nodes.forEach(n => n.link.classList.add('pulse'));
+setNode(-1);
 
-/* ---------- Scroll: progress, nav shadow, reveal, count-up ---------- */
+/* ---------- Scroll effects ---------- */
 const bar = $('#progress'), nav = $('#nav');
 addEventListener('scroll', () => {
   const h = document.documentElement;
@@ -168,16 +180,14 @@ addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', h.scrollTop > 30);
 }, { passive: true });
 
+let counted = false;
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (!e.isIntersecting) return;
   e.target.classList.add('in');
-  if (e.target.matches('.numbers')) countUp();
+  if (!counted && e.target.id === 'heroCard') { counted = true; countUp(); }
   io.unobserve(e.target);
-}), { threshold: .15 });
-document.querySelectorAll('.reveal').forEach((n, i) => {
-  n.style.transitionDelay = (i % 4) * 70 + 'ms';
-  io.observe(n);
-});
+}), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach((n, i) => { n.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(n); });
 
 function countUp() {
   document.querySelectorAll('[data-count]').forEach(n => {
@@ -186,22 +196,15 @@ function countUp() {
   });
 }
 
-/* ---------- Portrait tilt + magnetic buttons ---------- */
-const portrait = $('#portrait'), arch = $('.arch');
+/* ---------- Hero card tilt ---------- */
+const heroCard = $('#heroCard');
 if (!reduce && matchMedia('(pointer:fine)').matches) {
-  portrait.addEventListener('mousemove', e => {
-    const r = portrait.getBoundingClientRect();
+  heroCard.addEventListener('mousemove', e => {
+    const r = heroCard.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-    arch.style.transform = `perspective(900px) rotateY(${x * 10}deg) rotateX(${-y * 8}deg)`;
+    heroCard.style.transform = `perspective(900px) rotateY(${x * 9}deg) rotateX(${-y * 7}deg)`;
   });
-  portrait.addEventListener('mouseleave', () => arch.style.transform = '');
-  document.querySelectorAll('.magnetic').forEach(b => {
-    b.addEventListener('mousemove', e => {
-      const r = b.getBoundingClientRect();
-      b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .22}px, ${(e.clientY - r.top - r.height / 2) * .3}px)`;
-    });
-    b.addEventListener('mouseleave', () => b.style.transform = '');
-  });
+  heroCard.addEventListener('mouseleave', () => heroCard.style.transform = '');
 }
 
 /* ---------- Contact form (opens the visitor's email app) ---------- */
@@ -213,10 +216,9 @@ $('#form').addEventListener('submit', e => {
   location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Project inquiry')}&body=${encodeURIComponent(body)}`;
 });
 
-/* ---------- Background: soft drifting constellation in the palette ---------- */
+/* ---------- Background: blue constellation ---------- */
 const cv = $('#bg'), ctx = cv.getContext('2d');
-let pts = [], mouse = { x: -999, y: -999 }, ink = '185,165,149';
-function drawBg() { ink = root.dataset.theme === 'dark' ? '185,165,149' : '138,117,101'; }
+let pts = [], mouse = { x: -999, y: -999 };
 function resize() {
   const dpr = Math.min(devicePixelRatio || 1, 2);
   cv.width = innerWidth * dpr; cv.height = innerHeight * dpr;
@@ -228,21 +230,20 @@ function resize() {
 }
 addEventListener('resize', resize);
 addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-resize(); drawBg();
+resize();
 (function frame() {
   ctx.clearRect(0, 0, innerWidth, innerHeight);
   for (const p of pts) {
     p.x = (p.x + p.vx + innerWidth) % innerWidth;
     p.y = (p.y + p.vy + innerHeight) % innerHeight;
-    const dm = Math.hypot(p.x - mouse.x, p.y - mouse.y);
-    if (dm < 140) { p.x += (p.x - mouse.x) * .004; p.y += (p.y - mouse.y) * .004; }
-    ctx.fillStyle = `rgba(${ink},.55)`;
+    if (Math.hypot(p.x - mouse.x, p.y - mouse.y) < 140) { p.x += (p.x - mouse.x) * .004; p.y += (p.y - mouse.y) * .004; }
+    ctx.fillStyle = 'rgba(110,160,255,.6)';
     ctx.beginPath(); ctx.arc(p.x, p.y, 1.4, 0, 7); ctx.fill();
   }
   for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
     const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y);
     if (d < 130) {
-      ctx.strokeStyle = `rgba(${ink},${(1 - d / 130) * .22})`;
+      ctx.strokeStyle = `rgba(110,160,255,${(1 - d / 130) * .22})`;
       ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke();
     }
   }

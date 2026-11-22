@@ -1,175 +1,108 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Howell Valeros — AI &amp; Systems Developer</title>
-  <meta name="description" content="Portfolio of Howell Valeros, an AI and systems developer building honest, inviting, warm software: internal platforms, dispatch tooling and WordPress sites.">
-  <meta name="theme-color" content="#f6f2ec">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23b9a595'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Georgia' font-style='italic' fill='%23fff'%3EH%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Portfolio of Howell Valeros: AI-assisted internal platforms, dispatch tooling and WordPress sites built at Torero Global Outsourcing Corp.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b2a6b'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' font-family='Arial' font-weight='700' fill='%23fff'%3EH%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="progress" id="progress"></div>
   <canvas id="bg" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
 
   <header class="nav" id="nav">
-    <a class="logo" href="#top" aria-label="Howell Valeros home"><em>Howell</em><span>Valeros</span></a>
+    <a class="logo" href="#top" aria-label="Howell Valeros home"><b>H</b>Howell <span>Valeros</span></a>
     <nav aria-label="Primary">
-      <a href="#systems">Systems</a>
-      <a href="#work">Work</a>
-      <a href="#web">Websites</a>
+      <a href="#works">Works</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#skills">Skills</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a class="pill" href="#contact">Contact</a>
     </nav>
-    <button class="theme" id="theme" aria-label="Toggle evening mode"><i></i></button>
   </header>
 
   <main id="top">
     <!-- HERO -->
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow reveal">Portfolio &nbsp;·&nbsp; AI &amp; Systems Developer</p>
-        <h1 class="split" aria-label="Intelligent systems, built with care.">
-          <span class="line"><span>Intelligent</span></span>
-          <span class="line"><span>systems, built</span></span>
-          <span class="line"><span>with <em>care.</em></span></span>
-        </h1>
-        <p class="lead reveal">I'm Howell Valeros. I design and ship the software that keeps real operations running: dispatch planners, SOP libraries, ticketing, registries and the websites around them.</p>
-
-        <p class="values reveal" aria-label="honest, inviting, warm">
-          <span>honest</span>
-          <span class="circled">inviting
-            <svg viewBox="0 0 160 70" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="80" cy="35" rx="76" ry="29" /></svg>
-          </span>
-          <span>warm</span>
-        </p>
-
+        <p class="badge reveal"><i></i> AI &amp; Systems Developer</p>
+        <h1 class="reveal">Hi, I'm <span class="grad">Howell Valeros.</span><br>I build systems teams rely on.</h1>
+        <p class="lead reveal">AI-assisted internal platforms, dispatch tooling and WordPress sites, designed and shipped end to end at Torero Global Outsourcing Corp.</p>
         <div class="cta reveal">
-          <a class="btn magnetic" href="#work"><span>See the work</span><b>→</b></a>
-          <a class="btn ghost magnetic" href="#contact"><span>Start a project</span></a>
+          <a class="btn" href="#works">View my works <b>→</b></a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
       </div>
 
-      <figure class="portrait reveal" id="portrait">
-        <div class="arch">
-          <img src="assets/howell.jpeg" alt="Portrait of Howell" width="800" height="800">
+      <div class="hero-card reveal" id="heroCard">
+        <div class="photo"><img src="assets/howell.jpeg" alt="Portrait of Howell Valeros" width="800" height="800"></div>
+        <div class="hero-meta">
+          <strong>Howell Valeros</strong>
+          <span>Full-stack · AI-assisted · WordPress</span>
         </div>
-        <span class="orbit" aria-hidden="true"></span>
-        <figcaption><em>Howell Valeros</em> — Developer</figcaption>
-        <span class="chip c1">Torero Global Outsourcing Corp.</span>
-        <span class="chip c2">Full-stack · AI-assisted</span>
-      </figure>
+        <div class="mini"><span><b data-count="6">0</b> platforms</span><span><b data-count="2">0</b> websites</span><span><b data-count="1">0</b> SSO gateway</span></div>
+      </div>
     </section>
 
-    <!-- NUMBERS -->
-    <ul class="numbers reveal">
-      <li><strong data-count="6">0</strong><span>internal platforms shipped</span></li>
-      <li><strong data-count="2">0</strong><span>WordPress sites launched</span></li>
-      <li><strong data-count="1">0</strong><span>single sign-on gateway tying it together</span></li>
-    </ul>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="track">
-        <span>React</span><span>TypeScript</span><span>TanStack Start</span><span>PostgreSQL</span><span>Railway</span><span>Tailwind</span><span>Supabase</span><span>Docker</span><span>Zod</span><span>Recharts</span><span>WordPress</span><span>PWA</span><span>SSO</span>
-        <span>React</span><span>TypeScript</span><span>TanStack Start</span><span>PostgreSQL</span><span>Railway</span><span>Tailwind</span><span>Supabase</span><span>Docker</span><span>Zod</span><span>Recharts</span><span>WordPress</span><span>PWA</span><span>SSO</span>
-      </div>
-    </div>
-
-    <!-- SYSTEMS MAP -->
-    <section id="systems" class="section">
+    <!-- WORKS -->
+    <section id="works" class="section">
       <header class="sec-head reveal">
-        <p class="eyebrow">01 — The ecosystem</p>
-        <h2>One gateway. <em>Six tools</em> that talk to each other.</h2>
-        <p class="sub">Everything below signs in through a single LMS Gateway. Hover or tap a node to see what each platform does.</p>
+        <p class="eyebrow">Selected works</p>
+        <h2>Everything I've built, <span class="grad">one click away.</span></h2>
+        <p class="sub">Open any card to see what it does and how it's built.</p>
       </header>
+      <div class="filters reveal" id="filters" role="tablist" aria-label="Filter works">
+        <button class="on" data-f="all">All</button>
+        <button data-f="platform">Platforms</button>
+        <button data-f="site">Websites</button>
+      </div>
+      <div class="cards" id="cards"></div>
+    </section>
 
+    <!-- ECOSYSTEM -->
+    <section id="ecosystem" class="section">
+      <header class="sec-head reveal">
+        <p class="eyebrow">How it fits together</p>
+        <h2>One gateway. <span class="grad">Six connected tools.</span></h2>
+        <p class="sub">Every platform signs in through the same LMS Gateway. Tap a node to see what it does.</p>
+      </header>
       <div class="map-wrap reveal">
-        <svg id="map" viewBox="0 0 900 520" role="img" aria-label="Diagram of six platforms connected to the LMS Gateway"></svg>
+        <svg id="map" viewBox="0 0 900 520" role="img" aria-label="Six platforms connected to the LMS Gateway"></svg>
         <aside class="map-card" id="mapCard" aria-live="polite"></aside>
       </div>
     </section>
 
-    <!-- WORK -->
-    <section id="work" class="section">
+    <!-- SKILLS -->
+    <section id="skills" class="section">
       <header class="sec-head reveal">
-        <p class="eyebrow">02 — Selected work</p>
-        <h2>Built at <em>Torero Global Outsourcing Corp.</em></h2>
-        <p class="sub">Every tool here was designed and built by me for daily operations use. Open a row for the details.</p>
+        <p class="eyebrow">Skills</p>
+        <h2>The toolkit <span class="grad">behind the work.</span></h2>
       </header>
-      <ol class="index" id="index"></ol>
-    </section>
-
-    <!-- WEBSITES -->
-    <section id="web" class="section">
-      <header class="sec-head reveal">
-        <p class="eyebrow">03 — Websites</p>
-        <h2>Public faces, built on <em>WordPress</em>.</h2>
-      </header>
-      <div class="sites">
-        <a class="site reveal" href="https://tgocorp.com/" target="_blank" rel="noopener">
-          <div class="browser"><i></i><i></i><i></i><span>tgocorp.com</span></div>
-          <div class="site-body">
-            <h3>Torero Global Outsourcing Corp.</h3>
-            <p>The company website: who we are, what we do and how to reach us.</p>
-            <span class="visit">Visit site <b>↗</b></span>
-          </div>
-        </a>
-        <a class="site reveal" href="https://lastmilesupport.com/" target="_blank" rel="noopener">
-          <div class="browser"><i></i><i></i><i></i><span>lastmilesupport.com</span></div>
-          <div class="site-body">
-            <h3>Last Mile Support</h3>
-            <p>The brand site for the last-mile dispatch support service, and the home domain for its internal tools.</p>
-            <span class="visit">Visit site <b>↗</b></span>
-          </div>
-        </a>
+      <div class="skills">
+        <article class="card-s reveal"><span class="ico">⌘</span><h3>Frontend</h3><p>React, TypeScript, TanStack Start, Tailwind, Recharts</p></article>
+        <article class="card-s reveal"><span class="ico">▦</span><h3>Backend &amp; data</h3><p>PostgreSQL, Supabase, server functions, Zod validation</p></article>
+        <article class="card-s reveal"><span class="ico">✦</span><h3>AI-assisted dev</h3><p>Building with AI to ship faster, with guardrails and review</p></article>
+        <article class="card-s reveal"><span class="ico">☁</span><h3>Deploy &amp; ops</h3><p>Railway, Docker, Nixpacks, PWA and Android TWA</p></article>
+        <article class="card-s reveal"><span class="ico">⛨</span><h3>Auth &amp; access</h3><p>Single sign-on, role-based access, restricted data</p></article>
+        <article class="card-s reveal"><span class="ico">W</span><h3>WordPress</h3><p>Company and brand websites, launched and maintained</p></article>
       </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <header class="sec-head reveal">
-        <p class="eyebrow">04 — What I do</p>
-        <h2>Software that feels <em>personal</em>, and works hard.</h2>
-      </header>
-      <div class="services">
-        <article class="reveal"><span>i.</span><h3>AI agents &amp; automation</h3><p>Assistants and pipelines that take repetitive work off your team's plate, with guardrails and cost control.</p></article>
-        <article class="reveal"><span>ii.</span><h3>Internal platforms</h3><p>Dashboards, planners, registries and portals with proper roles, audit trails and single sign-on.</p></article>
-        <article class="reveal"><span>iii.</span><h3>Data &amp; integrations</h3><p>Safe, validated imports and syncs: held when something looks wrong, applied when it's right.</p></article>
-        <article class="reveal"><span>iv.</span><h3>Websites &amp; PWAs</h3><p>Fast WordPress sites and installable apps that feel native on phones.</p></article>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="section">
-      <header class="sec-head reveal">
-        <p class="eyebrow">05 — How I work</p>
-        <h2>Honest from the <em>first hello</em>.</h2>
-      </header>
-      <ol class="steps">
-        <li class="reveal"><b>01</b><h3>Listen</h3><p>I learn how the work really happens, on the floor, not on paper.</p></li>
-        <li class="reveal"><b>02</b><h3>Sketch</h3><p>A clickable prototype in days, so we can react to something real.</p></li>
-        <li class="reveal"><b>03</b><h3>Build</h3><p>Production code, tested, documented and deployed.</p></li>
-        <li class="reveal"><b>04</b><h3>Tend</h3><p>Monitor, learn and keep improving after launch.</p></li>
-      </ol>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <header class="sec-head reveal">
-        <p class="eyebrow">06 — About</p>
-        <h2>Hi, I'm <em>Howell Valeros.</em></h2>
-      </header>
       <div class="about reveal">
         <img src="assets/howell.jpeg" alt="Howell Valeros" loading="lazy">
         <div>
+          <p class="eyebrow">About</p>
+          <h2>Hi, I'm <span class="grad">Howell.</span></h2>
           <p>I'm a full-stack developer who builds AI-assisted internal platforms and websites. At Torero Global Outsourcing Corp. I designed and built the tools dispatch teams use every day, from planners and registries to a library of SOPs, plus the WordPress sites around them.</p>
-          <p>I care about software that is honest about what it does, inviting to use, and warm in how it treats the people behind the screen.</p>
-          <p class="role">Open to projects &amp; opportunities</p>
+          <p>I care about software that is honest about what it does, easy to use, and kind to the people behind the screen.</p>
         </div>
       </div>
     </section>
@@ -177,23 +110,38 @@
     <!-- CONTACT -->
     <section id="contact" class="section contact">
       <header class="sec-head center reveal">
-        <p class="eyebrow">07 — Say hello</p>
-        <h2>Have something to <em>build?</em></h2>
+        <p class="eyebrow">Contact</p>
+        <h2>Have something <span class="grad">to build?</span></h2>
         <p class="sub">Tell me a little about it. I'll reply as soon as I can.</p>
       </header>
       <form id="form" class="form reveal">
         <label>Name<input name="name" required autocomplete="name"></label>
         <label>Email<input name="email" type="email" required autocomplete="email"></label>
-        <label class="full">Project<textarea name="message" rows="4" required></textarea></label>
-        <button class="btn magnetic" type="submit"><span>Send message</span><b>→</b></button>
+        <label class="full">Message<textarea name="message" rows="4" required></textarea></label>
+        <button class="btn" type="submit">Send message <b>→</b></button>
       </form>
     </section>
   </main>
 
   <footer>
     <span>© <span id="year"></span> Howell Valeros</span>
-    <span class="values-mini"><em>honest · inviting · warm</em></span>
+    <a href="#top">Back to top ↑</a>
   </footer>
+
+  <!-- Project modal -->
+  <dialog id="modal" aria-labelledby="mTitle">
+    <button class="close" id="mClose" aria-label="Close">✕</button>
+    <div class="m-cover" id="mCover"></div>
+    <div class="m-body">
+      <span class="tag" id="mKind"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mBlurb"></p>
+      <ul id="mPoints"></ul>
+      <div class="tags" id="mStack"></div>
+      <a class="btn" id="mLink" target="_blank" rel="noopener" hidden>Visit site ↗</a>
+    </div>
+  </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>
