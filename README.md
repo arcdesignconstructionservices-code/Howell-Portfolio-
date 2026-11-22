@@ -1,6 +1,6 @@
-# Hwl+ — Howell's Portfolio
+# Howell Valeros — Portfolio
 
-Static portfolio for Howell (Hwl+ with Gab): warm neutral palette, interactive ecosystem map, and case studies from Torero Global Outsourcing Corp. No build step.
+Personal portfolio of Howell Valeros: warm neutral palette, interactive ecosystem map, and case studies from Torero Global Outsourcing Corp. No build step.
 
 ## Run locally
 Open `index.html`, or: `npx serve .`
