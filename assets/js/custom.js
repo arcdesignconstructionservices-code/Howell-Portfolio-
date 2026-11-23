@@ -211,6 +211,7 @@ ORDER BY tasks DESC;` }
     document.querySelectorAll('.portfolio-filters li').forEach(x => x.classList.toggle('filter-active', x === li));
     const f = li.dataset.filter;
     track.querySelectorAll('.pw-slide').forEach(s => s.classList.toggle('is-hidden', f !== '*' && !s.matches(f)));
+    const grid = f === '.filter-client'; track.classList.toggle('is-grid', grid); track.closest('.pw-wrap').classList.toggle('grid-mode', grid);
     track.scrollTo({ left: 0, behavior: 'auto' }); setTimeout(upd, 50);
   }));
   // drag to scroll (mouse)
@@ -236,4 +237,20 @@ ORDER BY tasks DESC;` }
     cover.closest('.pw-card').addEventListener('mouseleave', () => paused = false);
     setInterval(() => { if (!paused && !document.hidden) show((i + 1) % imgs.length); }, 3200);
   });
+})();
+
+/* Sidebar "Client Work": open Portfolio with the Client Work filter */
+(function () {
+  const sec = document.getElementById('portfolio');
+  if (!sec) return;
+  function showClients() {
+    const li = document.querySelector('.portfolio-filters [data-filter=".filter-client"]');
+    if (li) li.click();
+    const track = document.getElementById('pwTrack'); if (track) track.scrollTo({ left: 0, behavior: 'auto' });
+    const y = sec.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    document.querySelectorAll('.navmenu a').forEach(a => a.classList.toggle('active', a.classList.contains('nav-clients')));
+  }
+  document.querySelectorAll('a.nav-clients').forEach(a => a.addEventListener('click', e => { e.preventDefault(); history.replaceState(null, '', '#clients'); showClients(); }));
+  if (location.hash === '#clients') window.addEventListener('load', () => setTimeout(showClients, 400));
 })();

@@ -633,3 +633,9 @@ a { color: var(--accent-color); }
 .btn-main.btn-outline:hover { background: linear-gradient(135deg, #3bb4f0, #0f82bd); border-color: transparent; box-shadow: 0 18px 36px -14px rgba(20,157,221,.9); }
 .btn-main.btn-outline .bi-download { transition: transform .3s; }
 .btn-main.btn-outline:hover .bi-download { transform: translateY(3px); }
+
+/* Client Work: show every project at once in a grid (no slider) */
+.pw-wrap.grid-mode .pw-nav { display: none; }
+.pw-track.is-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: visible; scroll-snap-type: none; cursor: default; gap: 30px; }
+.pw-track.is-grid .pw-slide { flex: none; width: auto; }
+@media (max-width: 767px) { .pw-track.is-grid { grid-template-columns: 1fr; } }
