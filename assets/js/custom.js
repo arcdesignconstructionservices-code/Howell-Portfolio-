@@ -10,3 +10,13 @@ if (form) form.addEventListener('submit', e => {
   const body = `${f.get('message')}\n\n— ${f.get('name')} (${f.get('email')})`;
   location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(f.get('subject'))}&body=${encodeURIComponent(body)}`;
 });
+
+/* Light / dark theme toggle (default dark, remembered) */
+(function themeToggle() {
+  const btn = document.getElementById('themeToggle'); if (!btn) return;
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
