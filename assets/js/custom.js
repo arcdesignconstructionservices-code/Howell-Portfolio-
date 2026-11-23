@@ -126,11 +126,13 @@ GROUP BY p.name
 ORDER BY tasks DESC;` }
   ];
   const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  const hl = s => esc(s)
-    .replace(/(\/\/.*|#.*|--.*)$/gm, '<span class="tk-c">$1</span>')
-    .replace(/("[^"]*")/g, '<span class="tk-s">$1</span>')
-    .replace(/\b(const|function|return|import|as|def|from|SELECT|FROM|JOIN|WHERE|GROUP BY|ORDER BY|ON|AS|DESC|COUNT|true)\b/g, '<span class="tk-k">$1</span>')
-    .replace(/\b(\w+)(?=\()/g, '<span class="tk-f">$1</span>');
+  const KW = /^(const|function|return|import|as|def|from|SELECT|FROM|JOIN|WHERE|GROUP BY|ORDER BY|ON|AS|DESC|COUNT|true)$/;
+  const hl = s => s.replace(/(\/\/.*|#.*|--.*)|("[^"]*"?)|\b(GROUP BY|ORDER BY|\w+)\b(\()?|([\s\S])/g, (m, c, str, w, p, o) => {
+    if (c) return '<span class="tk-c">' + esc(c) + '</span>';
+    if (str) return '<span class="tk-s">' + esc(str) + '</span>';
+    if (w) return (KW.test(w) ? '<span class="tk-k">' + w + '</span>' : p ? '<span class="tk-f">' + w + '</span>' : /^\d+$/.test(w) ? '<span class="tk-n">' + w + '</span>' : w) + (p || '');
+    return esc(o);
+  });
   let si = 0, i = 0;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   function tick() {
