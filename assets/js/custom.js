@@ -182,7 +182,8 @@ ORDER BY tasks DESC;` }
 
 /* Portfolio: reveal stagger + 3D tilt with cursor shine */
 (function () {
-  const sec = document.getElementById('portfolio');
+  ['portfolio', 'clients'].forEach(id => {
+  const sec = document.getElementById(id);
   if (!sec) return;
   sec.querySelectorAll('.portfolio-item').forEach((it, i) => it.style.transitionDelay = (i % 3) * 0.12 + 's');
   new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { sec.classList.add('in'); o.disconnect(); } }), { threshold: 0.1 }).observe(sec);
@@ -194,6 +195,7 @@ ORDER BY tasks DESC;` }
     c.style.setProperty('--mx', (x * 100) + '%'); c.style.setProperty('--my', (y * 100) + '%');
   });
   sec.addEventListener('mouseout', e => { const c = e.target.closest('.pw-card'); if (c && !c.contains(e.relatedTarget)) { c.style.setProperty('--rx', '0deg'); c.style.setProperty('--ry', '0deg'); } });
+  });
 })();
 
 /* Portfolio carousel: arrows, drag-to-scroll, filters */
@@ -239,18 +241,9 @@ ORDER BY tasks DESC;` }
   });
 })();
 
-/* Sidebar "Client Work": open Portfolio with the Client Work filter */
+/* Sidebar Client Work card: highlight while the Client Work section is on screen */
 (function () {
-  const sec = document.getElementById('portfolio');
-  if (!sec) return;
-  function showClients() {
-    const li = document.querySelector('.portfolio-filters [data-filter=".filter-client"]');
-    if (li) li.click();
-    const track = document.getElementById('pwTrack'); if (track) track.scrollTo({ left: 0, behavior: 'auto' });
-    const y = sec.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-    document.querySelectorAll('.navmenu a').forEach(a => a.classList.toggle('active', a.classList.contains('nav-clients')));
-  }
-  document.querySelectorAll('a.nav-clients').forEach(a => a.addEventListener('click', e => { e.preventDefault(); history.replaceState(null, '', '#clients'); showClients(); }));
-  if (location.hash === '#clients') window.addEventListener('load', () => setTimeout(showClients, 400));
+  const link = document.getElementById('sideClient'), sec = document.getElementById('clients');
+  if (!link || !sec) return;
+  new IntersectionObserver(es => es.forEach(e => link.classList.toggle('active', e.isIntersecting)), { rootMargin: '-40% 0px -40% 0px' }).observe(sec);
 })();

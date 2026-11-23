@@ -639,3 +639,15 @@ a { color: var(--accent-color); }
 .pw-track.is-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: visible; scroll-snap-type: none; cursor: default; gap: 30px; }
 .pw-track.is-grid .pw-slide { flex: none; width: auto; }
 @media (max-width: 767px) { .pw-track.is-grid { grid-template-columns: 1fr; } }
+
+/* Sidebar: Client Work card sits in the gap above the footer */
+.header .side-client { position: relative; z-index: 1; margin-top: auto; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; border: 1px solid rgba(92,198,240,.35); background: linear-gradient(90deg, rgba(20,157,221,.28), rgba(255,255,255,.04)); color: #fff; transition: transform .3s, border-color .3s, box-shadow .3s, background .3s; }
+.header .side-client > i:first-child { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: var(--accent-color); font-size: 17px; color: #fff; box-shadow: 0 6px 16px rgba(20,157,221,.5); }
+.header .side-client span { flex: 1; min-width: 0; }
+.header .side-client strong { display: block; font: 600 14.5px var(--nav-font); line-height: 1.2; }
+.header .side-client small { display: block; margin-top: 2px; font: 400 11px var(--nav-font); color: #9fd8f2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header .side-client > i:last-child { color: #5cc6f0; transition: transform .3s; }
+.header .side-client:hover, .header .side-client.active { transform: translateY(-2px); border-color: #5cc6f0; box-shadow: 0 10px 26px rgba(20,157,221,.35); color: #fff; }
+.header .side-client:hover > i:last-child { transform: translateX(5px); }
+.header .side-client + .side-foot { margin-top: 0; }
+@media (max-height: 800px) { .header .side-client small { display: none; } .header .side-client { padding: 9px 12px; margin-bottom: 8px; } .header .side-client > i:first-child { width: 30px; height: 30px; font-size: 15px; } }
