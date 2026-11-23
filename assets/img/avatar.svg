@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Illustrated avatar of Howell Valeros">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1fb0f0"/>
+      <stop offset="1" stop-color="#0a4d78"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3c7a4"/>
+      <stop offset="1" stop-color="#e5ab84"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a2a33"/>
+      <stop offset="1" stop-color="#0b0b10"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="330" cy="70" r="120" fill="#fff" fill-opacity=".08"/>
+  <circle cx="60" cy="360" r="110" fill="#fff" fill-opacity=".07"/>
+
+  <!-- suit -->
+  <path d="M30 400 C30 330 105 298 200 298 C295 298 370 330 370 400 Z" fill="#12161e"/>
+  <!-- neck -->
+  <path d="M170 255 L230 255 L230 306 Q200 326 170 306 Z" fill="#d9a07a"/>
+  <!-- shirt -->
+  <path d="M158 300 L200 356 L242 300 Q200 318 158 300 Z" fill="#ffffff"/>
+  <!-- lapels -->
+  <path d="M152 300 L198 360 L156 400 L108 400 Z" fill="#0a0d13"/>
+  <path d="M248 300 L202 360 L244 400 L292 400 Z" fill="#0a0d13"/>
+  <!-- tie -->
+  <path d="M190 326 L210 326 L206 340 L194 340 Z" fill="#222733"/>
+  <path d="M194 340 L206 340 L214 400 L186 400 Z" fill="#2b3140"/>
+
+  <!-- ears -->
+  <ellipse cx="127" cy="210" rx="13" ry="17" fill="#e8b48e"/>
+  <ellipse cx="273" cy="210" rx="13" ry="17" fill="#e8b48e"/>
+
+  <!-- head -->
+  <path d="M126 196 C126 138 158 108 200 108 C242 108 274 138 274 196 C274 246 244 282 200 282 C156 282 126 246 126 196 Z" fill="url(#skin)"/>
+
+  <!-- hair: swept, medium length with soft waves -->
+  <path d="M120 214 C104 128 150 78 206 80 C268 82 300 132 280 214 C276 178 266 156 246 144 C222 156 176 156 152 146 C134 166 128 190 120 214 Z" fill="url(#hair)"/>
+  <path d="M120 214 C112 246 120 268 138 280 C134 252 136 230 144 206 Z" fill="#0f0f14"/>
+  <path d="M280 214 C288 246 280 268 262 280 C266 252 264 230 256 206 Z" fill="#0f0f14"/>
+  <path d="M146 150 C178 132 222 126 262 146 C242 116 176 108 146 150 Z" fill="#23232c"/>
+
+  <!-- brows -->
+  <path d="M156 192 Q175 182 193 189" stroke="#16161b" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M207 189 Q225 182 244 192" stroke="#16161b" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+  <!-- eyes -->
+  <ellipse cx="175" cy="208" rx="7.5" ry="8.5" fill="#1b1212"/>
+  <ellipse cx="225" cy="208" rx="7.5" ry="8.5" fill="#1b1212"/>
+  <circle cx="177.5" cy="205" r="2.2" fill="#fff"/>
+  <circle cx="227.5" cy="205" r="2.2" fill="#fff"/>
+
+  <!-- nose -->
+  <path d="M200 214 Q195 238 206 242" stroke="#c4885f" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+  <!-- cheeks -->
+  <circle cx="158" cy="240" r="13" fill="#f08f86" fill-opacity=".22"/>
+  <circle cx="242" cy="240" r="13" fill="#f08f86" fill-opacity=".22"/>
+
+  <!-- smile -->
+  <path d="M178 254 Q200 270 224 254" stroke="#a24f48" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+</svg>
