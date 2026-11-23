@@ -1,5 +1,9 @@
 /* Works built by Howell Valeros */
 const WORKS = [
+  { slug: 'arc-gateway', type: 'client', name: 'ARC+ Gateway', mono: 'ARC', kind: 'Client work · In progress', url: 'https://gateway.arcdesignconstructions.com/',
+    blurb: 'A branded sign-in gateway I am building right now for my client ARC+ Design and Construction.',
+    points: ['Client project for ARC+ Design and Construction, currently in development.', 'Branded sign-in page with rotating interior-design slides.', 'Sign in with email or username, with password reset sent by email.'],
+    stack: ['Sign-in gateway', 'Web app'] },
   { slug: 'driver-registry', type: 'platform', name: 'Driver Registry', mono: 'DR', kind: 'Data platform',
     blurb: 'One trusted record per driver for every tool, synced daily and protected by safety checks.',
     points: ['IDs link drivers, never names, so records cannot be mixed up.', 'Daily snapshots are applied, held or refused, and a partial pull never marks drivers as gone.', 'Restricted to admins, with sensitive personal data deliberately excluded.'],
