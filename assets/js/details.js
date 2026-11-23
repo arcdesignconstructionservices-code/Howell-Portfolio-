@@ -18,7 +18,8 @@
 
   // media: single image, or auto-rotating gallery with thumbnails
   const ext = w.type === 'client' ? '.jpg' : '.svg';
-  const srcs = (w.imgs || [w.slug]).map(n => 'assets/img/portfolio/' + n + ext);
+  const base = w.type === 'client' ? 'ARC%20Photos%20portfolio/' : 'assets/img/portfolio/';
+  const srcs = (w.imgs || [w.slug]).map(n => base + n + ext);
   const img = $('#dImg'); img.alt = w.name; img.src = srcs[0];
   if (w.type === 'client' && !w.imgs) $('#dMedia').classList.add('photo');
   if (w.imgs) $('#dMedia').classList.add('shot');
