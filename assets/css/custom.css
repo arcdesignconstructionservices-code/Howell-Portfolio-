@@ -506,3 +506,26 @@ a { color: var(--accent-color); }
 .pw-live:hover { background: var(--accent-color); color: #fff; transform: rotate(12deg) scale(1.1); }
 .portfolio .portfolio-item { perspective: none; }
 @media (prefers-reduced-motion: reduce) { .pw-card { transform: none !important; } }
+
+/* Portfolio carousel (Godee-style) */
+.pw-wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
+.pw-wrap .portfolio-filters { justify-content: flex-start; margin: 0; }
+.pw-nav { display: flex; gap: 10px; }
+.pw-nav button { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 0; background: var(--surface-color); color: var(--heading-color); box-shadow: 0 6px 18px rgba(8,30,55,.15); transition: transform .25s, background .25s, color .25s, opacity .25s; }
+.pw-nav button:hover { background: var(--accent-color); color: #fff; transform: translateY(-2px); }
+.pw-nav button:disabled { opacity: .35; pointer-events: none; }
+.pw-track { width: 100%; display: flex; gap: 26px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 24px 6px 34px; margin-top: 4px; scrollbar-width: none; cursor: grab; }
+.pw-track::-webkit-scrollbar { display: none; }
+.pw-track.drag { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; }
+.pw-slide { flex: 0 0 clamp(290px, 31.5%, 410px); scroll-snap-align: start; }
+.pw-slide.is-hidden { display: none; }
+.pw-card { border-radius: 22px; }
+.pw-cover { aspect-ratio: 4 / 3; margin: 10px 10px 0; border-radius: 16px; }
+.pw-cover::after { background: linear-gradient(180deg, transparent 60%, rgba(6,20,38,.45)); }
+.pw-num { display: none; }
+.pw-badge { right: auto; left: 12px; top: auto; bottom: 12px; background: #fff; color: var(--accent-color); border: 0; box-shadow: 0 4px 14px rgba(0,0,0,.2); backdrop-filter: none; font-size: 12px; padding: 6px 12px; }
+.pw-cover::before { content: "\2197\FE0E"; position: absolute; z-index: 3; top: 12px; right: 12px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: #0b1a2b; font-size: 18px; font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,.2); transition: transform .35s cubic-bezier(.34,1.56,.64,1), background .3s, color .3s; }
+.pw-card:hover .pw-cover::before { background: var(--accent-color); color: #fff; transform: rotate(45deg) scale(1.1); }
+.pw-body h3 { font-size: 20px; }
+.pw-body > p { -webkit-line-clamp: 2; }
+@media (max-width: 767px) { .pw-slide { flex-basis: 82%; } .pw-nav { display: none; } }

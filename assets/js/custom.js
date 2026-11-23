@@ -195,3 +195,30 @@ ORDER BY tasks DESC;` }
   });
   sec.addEventListener('mouseout', e => { const c = e.target.closest('.pw-card'); if (c && !c.contains(e.relatedTarget)) { c.style.setProperty('--rx', '0deg'); c.style.setProperty('--ry', '0deg'); } });
 })();
+
+/* Portfolio carousel: arrows, drag-to-scroll, filters */
+(function () {
+  const track = document.getElementById('pwTrack');
+  if (!track) return;
+  const prev = document.getElementById('pwPrev'), next = document.getElementById('pwNext');
+  const step = () => (track.querySelector('.pw-slide:not(.is-hidden)') || { offsetWidth: 300 }).offsetWidth + 26;
+  const upd = () => { prev.disabled = track.scrollLeft < 8; next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8; };
+  prev.onclick = () => track.scrollBy({ left: -step() });
+  next.onclick = () => track.scrollBy({ left: step() });
+  track.addEventListener('scroll', upd, { passive: true });
+  addEventListener('resize', upd);
+  document.querySelectorAll('.portfolio-filters li').forEach(li => li.addEventListener('click', () => {
+    document.querySelectorAll('.portfolio-filters li').forEach(x => x.classList.toggle('filter-active', x === li));
+    const f = li.dataset.filter;
+    track.querySelectorAll('.pw-slide').forEach(s => s.classList.toggle('is-hidden', f !== '*' && !s.matches(f)));
+    track.scrollTo({ left: 0, behavior: 'auto' }); setTimeout(upd, 50);
+  }));
+  // drag to scroll (mouse)
+  let down = false, sx = 0, sl = 0, moved = false;
+  track.addEventListener('mousedown', e => { down = true; moved = false; sx = e.pageX; sl = track.scrollLeft; });
+  addEventListener('mouseup', () => { if (down) { down = false; track.classList.remove('drag'); } });
+  track.addEventListener('mousemove', e => { if (!down) return; const dx = e.pageX - sx; if (Math.abs(dx) > 5) { moved = true; track.classList.add('drag'); } if (moved) track.scrollLeft = sl - dx; });
+  track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+  track.addEventListener('dragstart', e => e.preventDefault());
+  setTimeout(upd, 300);
+})();

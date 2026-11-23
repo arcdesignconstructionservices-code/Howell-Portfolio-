@@ -355,17 +355,21 @@
 
       <div class="container">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="pw-wrap">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <ul class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-platform">Platforms</li>
             <li data-filter=".filter-site">Websites</li>
           </ul>
+          <div class="pw-nav" aria-label="Scroll projects">
+            <button type="button" id="pwPrev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+            <button type="button" id="pwNext" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+          </div>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="pw-track" id="pwTrack">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+            <div class="pw-slide portfolio-item filter-platform">
               <article class="pw-card">
                 <a class="pw-cover" href="portfolio-details.html?w=driver-registry" tabindex="-1" aria-hidden="true">
                   <img src="assets/img/portfolio/driver-registry.svg" alt="Driver Registry" loading="lazy">
@@ -384,7 +388,7 @@
               </article>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+            <div class="pw-slide portfolio-item filter-platform">
               <article class="pw-card">
                 <a class="pw-cover" href="portfolio-details.html?w=send-back-planner" tabindex="-1" aria-hidden="true">
                   <img src="assets/img/portfolio/send-back-planner.svg" alt="Send Back Planner" loading="lazy">
@@ -403,7 +407,7 @@
               </article>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+            <div class="pw-slide portfolio-item filter-platform">
               <article class="pw-card">
                 <a class="pw-cover" href="portfolio-details.html?w=last-mile-library" tabindex="-1" aria-hidden="true">
                   <img src="assets/img/portfolio/last-mile-library.svg" alt="Last Mile Library" loading="lazy">
@@ -422,7 +426,7 @@
               </article>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+            <div class="pw-slide portfolio-item filter-platform">
               <article class="pw-card">
                 <a class="pw-cover" href="portfolio-details.html?w=tgo-ticketing" tabindex="-1" aria-hidden="true">
                   <img src="assets/img/portfolio/tgo-ticketing.svg" alt="TGO Ticketing System" loading="lazy">
@@ -441,7 +445,7 @@
               </article>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+            <div class="pw-slide portfolio-item filter-platform">
               <article class="pw-card">
                 <a class="pw-cover" href="portfolio-details.html?w=dispatch-coach-central" tabindex="-1" aria-hidden="true">
                   <img src="assets/img/portfolio/dispatch-coach-central.svg" alt="Dispatch Coach Central" loading="lazy">
@@ -460,7 +464,7 @@
               </article>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+            <div class="pw-slide portfolio-item filter-platform">
               <article class="pw-card">
                 <a class="pw-cover" href="portfolio-details.html?w=workblocks" tabindex="-1" aria-hidden="true">
                   <img src="assets/img/portfolio/workblocks.svg" alt="Workblocks" loading="lazy">
@@ -479,7 +483,7 @@
               </article>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-site">
+            <div class="pw-slide portfolio-item filter-site">
               <article class="pw-card">
                 <a class="pw-cover" href="portfolio-details.html?w=tgocorp" tabindex="-1" aria-hidden="true">
                   <img src="assets/img/portfolio/tgocorp.svg" alt="tgocorp.com" loading="lazy">
@@ -499,7 +503,7 @@
               </article>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-site">
+            <div class="pw-slide portfolio-item filter-site">
               <article class="pw-card">
                 <a class="pw-cover" href="portfolio-details.html?w=lastmilesupport" tabindex="-1" aria-hidden="true">
                   <img src="assets/img/portfolio/lastmilesupport.svg" alt="lastmilesupport.com" loading="lazy">
