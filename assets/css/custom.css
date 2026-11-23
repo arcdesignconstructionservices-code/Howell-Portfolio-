@@ -376,3 +376,10 @@ a { color: var(--accent-color); }
 .code-status { display: flex; justify-content: space-between; padding: 7px 14px; font-size: 11px; color: #8da3b6; background: #101f35; border-top: 1px solid rgba(255,255,255,.07); }
 .code-status i { font-size: 7px; color: #28c840; vertical-align: 1px; margin-right: 4px; }
 .tk-k { color: #c792ea; } .tk-s { color: #a5e075; } .tk-f { color: #5cc6f0; } .tk-c { color: #5c7a94; font-style: italic; } .tk-n { color: #f9ae58; }
+
+/* About: code window matches text column height */
+@media (min-width: 992px) {
+  #about .col-lg-4 { display: flex; }
+  .code-win { display: flex; flex-direction: column; width: 100%; }
+  .code-body { flex: 1; height: auto; min-height: 330px; }
+}
