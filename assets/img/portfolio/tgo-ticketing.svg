@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#040b14"/><stop offset="1" stop-color="#0b6a9a"/></linearGradient>
+<pattern id="p" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".08"/></pattern>
+<radialGradient id="m" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+<mask id="k"><rect width="800" height="600" fill="url(#m)"/></mask>
+</defs>
+<rect width="800" height="600" fill="url(#g)"/>
+<rect width="800" height="600" fill="url(#p)" mask="url(#k)"/>
+<circle cx="700" cy="40" r="210" fill="#fff" fill-opacity=".07"/>
+<circle cx="90" cy="560" r="150" fill="#fff" fill-opacity=".05"/>
+<text x="400" y="320" text-anchor="middle" font-family="Raleway, Arial, sans-serif" font-weight="800" font-size="190" fill="#fff" letter-spacing="-6">TK</text>
+<text x="400" y="400" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="32" fill="#fff" fill-opacity=".85">TGO Ticketing System</text>
+<text x="46" y="70" font-family="Poppins, Arial, sans-serif" font-size="24" letter-spacing="6" fill="#fff" fill-opacity=".7">04</text>
+</svg>

@@ -4,24 +4,37 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Howell Valeros — AI &amp; Systems Developer</title>
-  <meta content="Portfolio of Howell Valeros: AI-assisted internal platforms, dispatch tooling and WordPress sites built at Torero Global Outsourcing Corp." name="description">
+  <title>Howell Valeros — Full-stack Developer</title>
+  <meta content="Portfolio of Howell Valeros, a full-stack developer in Pasig City, Philippines: WordPress sites, internal web platforms and automated data pipelines." name="description">
   <meta content="Howell Valeros, portfolio, full-stack developer, AI, WordPress, React, PostgreSQL" name="keywords">
 
+  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/custom.css" rel="stylesheet">
 
-  <!-- Template: iPortfolio by BootstrapMade (https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/) -->
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -33,85 +46,96 @@
       <img src="assets/img/howell.jpeg" alt="Howell Valeros" class="img-fluid rounded-circle">
     </div>
 
-    <a href="#hero" class="logo d-flex align-items-center justify-content-center">
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Howell Valeros</h1>
     </a>
 
     <div class="social-links text-center">
-      <a href="https://tgocorp.com/" target="_blank" rel="noopener" title="tgocorp.com"><i class="bi bi-globe2"></i></a>
-      <a href="https://lastmilesupport.com/" target="_blank" rel="noopener" title="lastmilesupport.com"><i class="bi bi-globe-americas"></i></a>
+      <a href="https://tgocorp.com/" target="_blank" rel="noopener" title="tgocorp.com" class="linkedin"><i class="bi bi-globe2"></i></a>
+      <a href="https://lastmilesupport.com/" target="_blank" rel="noopener" title="lastmilesupport.com" class="google-plus"><i class="bi bi-globe-americas"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#hero"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#works"><i class="bi bi-grid-1x2 navicon"></i> Works</a></li>
-        <li><a href="#ecosystem"><i class="bi bi-diagram-3 navicon"></i> Ecosystem</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
+
   </header>
 
   <main class="main">
 
-    <!-- Hero (animated background drawn on canvas) -->
+    <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
+
       <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Howell Valeros</h2>
-        <p>I'm a <span class="typed" data-typed-items="AI &amp; Systems Developer, Full-stack Developer, WordPress Developer">AI &amp; Systems Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-        <a href="#works" class="hero-btn">View my works <i class="bi bi-arrow-right"></i></a>
+        <p>I'm <span class="typed" data-typed-items="Full-stack Developer, WordPress Developer, Data Automation">Full-stack Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
-    </section>
 
-    <!-- About -->
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
     <section id="about" class="about section">
+
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p>Software that is honest about what it does, easy to use, and kind to the people behind the screen.</p>
+        <p>Full-stack developer with hands-on experience in web application development, database administration and data automation.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/howell.jpeg" class="img-fluid about-photo" alt="Howell Valeros">
+            <img src="assets/img/howell.jpeg" class="img-fluid" alt="Howell Valeros">
           </div>
           <div class="col-lg-8 content">
-            <h2>Full-stack &amp; AI-assisted Developer.</h2>
+            <h2>Full-stack Developer &amp; WordPress Developer.</h2>
             <p class="fst-italic py-3">
-              At Torero Global Outsourcing Corp. I designed and built the tools dispatch teams use every day, plus the WordPress sites around them.
+              My background spans data entry, dispatch operations and technical development, with proficiency in TypeScript, React, SQL and PostgreSQL.
             </p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Name:</strong> <span>Howell Valeros</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Company:</strong> <span>Torero Global Outsourcing Corp.</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Name:</strong> <span>John Howell S. Valeros</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Pasig City, Philippines</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>howellsayson@gmail.com</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Focus:</strong> <span>Internal platforms &amp; automation</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Availability:</strong> <span>Open to projects</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Company:</strong> <span>Torero Global Outsourcing Corp.</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B.Eng. Technology, Computer Engineering</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
             </div>
             <p class="py-3">
-              From a driver registry and dispatch planner to an SOP library and ticketing system, every tool signs in through one shared gateway. I build with React, TypeScript and PostgreSQL, deploy on Railway, and use AI to ship faster, with guardrails and review.
+              I build websites, manage databases and engineer automated data pipelines using modern AI-assisted development tools. At Torero Global Outsourcing Corp. I created and maintain the company websites and built the full-stack platforms its dispatch teams use every day.
             </p>
-            <div class="chips">
-              <span>React</span><span>TypeScript</span><span>TanStack Start</span><span>PostgreSQL</span><span>Supabase</span><span>Tailwind</span><span>Docker</span><span>Railway</span><span>PWA</span><span>SSO</span><span>WordPress</span>
-            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Stats -->
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
     <section id="stats" class="stats section">
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
         <div class="row gy-4">
+
           <div class="col-lg-4 col-md-6">
             <div class="stats-item">
               <i class="bi bi-layers"></i>
@@ -119,6 +143,7 @@
               <p><strong>Platforms</strong> <span>built for daily operations</span></p>
             </div>
           </div>
+
           <div class="col-lg-4 col-md-6">
             <div class="stats-item">
               <i class="bi bi-wordpress"></i>
@@ -126,175 +151,472 @@
               <p><strong>WordPress Sites</strong> <span>launched and live</span></p>
             </div>
           </div>
+
           <div class="col-lg-4 col-md-6">
             <div class="stats-item">
               <i class="bi bi-shield-lock"></i>
               <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>SSO Gateway</strong> <span>tying every tool together</span></p>
+              <p><strong>SSO Gateway</strong> <span>connecting every tool</span></p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Works (cards) -->
-    <section id="works" class="portfolio section light-background">
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section light-background">
+
       <div class="container section-title" data-aos="fade-up">
-        <h2>Works</h2>
-        <p>Everything I built at Torero Global Outsourcing Corp. Click any card to see what it does and how it's built.</p>
+        <h2>Skills</h2>
+        <p>Technical: WordPress, GitHub, Railway, Visual Studio Code, Lovable, TypeScript, JavaScript, React, HTML/CSS, SQL, PostgreSQL, Python (Basic), Zoho Recruit, Zoho Form, Zoho Sign, Claude, ChatGPT, Canva and Microsoft Office.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"><span>TypeScript / React</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>SQL / PostgreSQL</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"><span>GitHub / Railway deployment</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>AI-assisted development</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Excel (Power Query, VBA)</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Soft skills: client relationship management, attention to detail, communication, working under deadlines, organization, problem-solving, adaptability, time management and team collaboration.</p>
       </div>
 
       <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="fitRows" data-sort="original-order">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>John Howell S. Valeros</h4>
+              <p><em>Full-stack developer with hands-on experience in web application development, database administration and data automation. Experienced in building websites, managing databases and engineering automated data pipelines using modern AI-assisted development tools.</em></p>
+              <ul>
+                <li>Pasig City, Philippines</li>
+                <li>howellsayson@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Engineering Technology, Major in Computer Engineering Technology</h4>
+              <p><em>Technological University of the Philippines</em></p>
+            </div>
+
+            <h3 class="resume-title">Seminars Attended</h3>
+            <div class="resume-item">
+              <h4>Zoholics Manila 2026</h4>
+              <p>Zoho annual user conference on agentic AI and updates across the Zoho One suite.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Project Staff Associate</h4>
+              <h5>Aug 2026 - Present</h5>
+              <p><em>Torero Global Outsourcing Corp.</em></p>
+              <ul>
+                <li>Web Developer: create and maintain company websites using WordPress, handling design, layout and content updates; customize and troubleshoot themes and plugins; monitor site performance and resolve technical issues</li>
+                <li>Full-stack development and automation: design UI/UX in Lovable and build full-stack web applications with TypeScript, React, SQL and PostgreSQL, deployed through GitHub and Railway with AI-assisted coding</li>
+                <li>Design and maintain PostgreSQL databases, including schemas, queries, CRUD operations and migrations; engineer automated data pipelines with validation, reconciliation and quality checks</li>
+                <li>Systems support: primary contact for Zoho Recruit, resolving errors and configuration issues and guiding users</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Dispatcher / Data Entry</h4>
+              <h5>Sept 2025 - Aug 2026</h5>
+              <p><em>Torero Global Outsourcing Corp.</em></p>
+              <ul>
+                <li>Consolidated and standardized daily dispatch reports for a US-based fuel transportation client, automating reporting with Excel formulas, PivotTables, Power Query and VBA</li>
+                <li>Validated and reconciled data to catch missing, duplicate or inconsistent entries before submitting reports on deadline</li>
+                <li>Supported Delivery Service Partners with data extraction, report preparation and spreadsheet troubleshooting</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Data Entry (Internship)</h4>
+              <h5>Mar 2025 - Aug 2025</h5>
+              <p><em>Systech Lighting and Controls Incorporated</em></p>
+              <ul>
+                <li>Entered and validated records in Excel and Google Sheets, maintaining accuracy and consistency</li>
+                <li>Organized and digitized official files, improving document retrieval and recordkeeping</li>
+                <li>Supported cross-functional teams with administrative and communication tasks</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Everything I built at Torero Global Outsourcing Corp. Hover a card to preview it or open its details.</p>
+      </div>
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-platform">Platforms</li>
             <li data-filter=".filter-site">Websites</li>
           </ul>
-          <div class="row gy-4 isotope-container" id="cards" data-aos="fade-up" data-aos-delay="200"></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Ecosystem -->
-    <section id="ecosystem" class="ecosystem section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Ecosystem</h2>
-        <p>Every platform signs in through the same LMS Gateway. Tap a node to see what it does.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-8"><svg id="map" viewBox="0 0 900 520" role="img" aria-label="Six platforms connected to the LMS Gateway"></svg></div>
-          <div class="col-lg-4"><aside class="map-card" id="mapCard" aria-live="polite"></aside></div>
-        </div>
-      </div>
-    </section>
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-    <!-- Services -->
-    <section id="services" class="services section light-background">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/driver-registry.svg" class="img-fluid" alt="Driver Registry">
+                <div class="portfolio-info">
+                  <h4>Driver Registry</h4>
+                  <p>Data platform</p>
+                  <a href="assets/img/portfolio/driver-registry.svg" title="Driver Registry" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html?w=driver-registry" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/send-back-planner.svg" class="img-fluid" alt="Send Back Planner">
+                <div class="portfolio-info">
+                  <h4>Send Back Planner</h4>
+                  <p>Dispatch command center</p>
+                  <a href="assets/img/portfolio/send-back-planner.svg" title="Send Back Planner" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html?w=send-back-planner" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/last-mile-library.svg" class="img-fluid" alt="Last Mile Library">
+                <div class="portfolio-info">
+                  <h4>Last Mile Library</h4>
+                  <p>Interactive SOP library</p>
+                  <a href="assets/img/portfolio/last-mile-library.svg" title="Last Mile Library" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html?w=last-mile-library" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/tgo-ticketing.svg" class="img-fluid" alt="TGO Ticketing System">
+                <div class="portfolio-info">
+                  <h4>TGO Ticketing System</h4>
+                  <p>Ticketing · PWA</p>
+                  <a href="assets/img/portfolio/tgo-ticketing.svg" title="TGO Ticketing System" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html?w=tgo-ticketing" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/dispatch-coach-central.svg" class="img-fluid" alt="Dispatch Coach Central">
+                <div class="portfolio-info">
+                  <h4>Dispatch Coach Central</h4>
+                  <p>Coaching management</p>
+                  <a href="assets/img/portfolio/dispatch-coach-central.svg" title="Dispatch Coach Central" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html?w=dispatch-coach-central" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-platform">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/workblocks.svg" class="img-fluid" alt="Workblocks">
+                <div class="portfolio-info">
+                  <h4>Workblocks</h4>
+                  <p>Capacity reporting</p>
+                  <a href="assets/img/portfolio/workblocks.svg" title="Workblocks" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html?w=workblocks" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-site">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/tgocorp.svg" class="img-fluid" alt="tgocorp.com">
+                <div class="portfolio-info">
+                  <h4>tgocorp.com</h4>
+                  <p>WordPress website</p>
+                  <a href="assets/img/portfolio/tgocorp.svg" title="tgocorp.com" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html?w=tgocorp" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-site">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/lastmilesupport.svg" class="img-fluid" alt="lastmilesupport.com">
+                <div class="portfolio-info">
+                  <h4>lastmilesupport.com</h4>
+                  <p>WordPress website</p>
+                  <a href="assets/img/portfolio/lastmilesupport.svg" title="lastmilesupport.com" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html?w=lastmilesupport" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
       <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
         <p>What I can build for you.</p>
       </div>
+
       <div class="container">
+
         <div class="row gy-4">
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="icon flex-shrink-0"><i class="bi bi-robot"></i></div>
-            <div><h4 class="title">AI Agents &amp; Automation</h4><p class="description">Assistants and pipelines that take repetitive work off your team, with guardrails and cost control.</p></div>
+            <div>
+              <h4 class="title">AI Agents &amp; Automation</h4>
+              <p class="description">Assistants and pipelines that take repetitive work off your team, with guardrails and cost control.</p>
+            </div>
           </div>
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-window-stack"></i></div>
-            <div><h4 class="title">Internal Platforms</h4><p class="description">Dashboards, planners, registries and portals with roles, audit trails and single sign-on.</p></div>
+            <div>
+              <h4 class="title">Internal Platforms</h4>
+              <p class="description">Dashboards, planners, registries and portals with roles, audit trails and single sign-on.</p>
+            </div>
           </div>
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="icon flex-shrink-0"><i class="bi bi-database-check"></i></div>
-            <div><h4 class="title">Data &amp; Integrations</h4><p class="description">Safe, validated imports and syncs: held when something looks wrong, applied when it's right.</p></div>
+            <div>
+              <h4 class="title">Data &amp; Integrations</h4>
+              <p class="description">Safe, validated imports and syncs: held when something looks wrong, applied when it is right.</p>
+            </div>
           </div>
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="icon flex-shrink-0"><i class="bi bi-wordpress"></i></div>
-            <div><h4 class="title">WordPress Websites</h4><p class="description">Company and brand websites, designed, launched and maintained.</p></div>
+            <div>
+              <h4 class="title">WordPress Websites</h4>
+              <p class="description">Company and brand websites, designed, launched and maintained.</p>
+            </div>
           </div>
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-phone"></i></div>
-            <div><h4 class="title">PWAs &amp; Mobile</h4><p class="description">Installable apps that feel native on phones, including Android packaging.</p></div>
+            <div>
+              <h4 class="title">PWAs &amp; Mobile</h4>
+              <p class="description">Installable apps that feel native on phones, including Android packaging.</p>
+            </div>
           </div>
+
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="icon flex-shrink-0"><i class="bi bi-cloud-check"></i></div>
-            <div><h4 class="title">Deploy &amp; Operate</h4><p class="description">Docker and Railway deployments with health checks, so tools stay up.</p></div>
+            <div>
+              <h4 class="title">Deploy &amp; Operate</h4>
+              <p class="description">Docker and Railway deployments with health checks, so tools stay up.</p>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Contact -->
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Contact Section -->
     <section id="contact" class="contact section">
+
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Tell me a little about what you'd like to build.</p>
+        <p>Have a project in mind? Send me a message.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
         <div class="row gy-4">
+
           <div class="col-lg-5">
+
             <div class="info-wrap">
-              <div class="info-item d-flex">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>Pasig City, Philippines</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="150">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p><a href="mailto:howellsayson@gmail.com">howellsayson@gmail.com</a></p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                 <i class="bi bi-globe2 flex-shrink-0"></i>
-                <div><h3>Company site</h3><p><a href="https://tgocorp.com/" target="_blank" rel="noopener">tgocorp.com</a></p></div>
+                <div>
+                  <h3>Company site</h3>
+                  <p><a href="https://tgocorp.com/" target="_blank" rel="noopener">tgocorp.com</a></p>
+                </div>
               </div>
-              <div class="info-item d-flex">
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-globe-americas flex-shrink-0"></i>
-                <div><h3>Brand site</h3><p><a href="https://lastmilesupport.com/" target="_blank" rel="noopener">lastmilesupport.com</a></p></div>
+                <div>
+                  <h3>Brand site</h3>
+                  <p><a href="https://lastmilesupport.com/" target="_blank" rel="noopener">lastmilesupport.com</a></p>
+                </div>
               </div>
-              <div class="info-item d-flex">
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-check2-circle flex-shrink-0"></i>
-                <div><h3>Availability</h3><p>Open to projects and opportunities</p></div>
+                <div>
+                  <h3>Availability</h3>
+                  <p>Open to projects and opportunities</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="col-lg-7">
-            <form id="form" class="php-email-form">
+            <form id="form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
+
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
                 </div>
+
                 <div class="col-md-6">
                   <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
                 </div>
+
                 <div class="col-md-12">
                   <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
                 </div>
+
                 <div class="col-md-12">
                   <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="7" id="message-field" required></textarea>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
                 </div>
+
                 <div class="col-md-12 text-center">
                   <button type="submit">Send Message</button>
                 </div>
+
               </div>
             </form>
           </div>
+
         </div>
+
       </div>
-    </section>
+
+    </section><!-- /Contact Section -->
 
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
+
     <div class="container">
-      <div class="copyright text-center">
+      <div class="copyright text-center ">
         <p>© <span id="year"></span> <strong class="px-1 sitename">Howell Valeros</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
       </div>
     </div>
+
   </footer>
 
+  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Work details modal -->
-  <div class="modal fade work-modal" id="workModal" tabindex="-1" aria-labelledby="mTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="m-cover" id="mCover"></div>
-        <div class="m-body">
-          <span class="tag" id="mKind"></span>
-          <h3 id="mTitle"></h3>
-          <p id="mBlurb"></p>
-          <ul id="mPoints"></ul>
-          <div class="chips" id="mStack"></div>
-          <a class="hero-btn" id="mLink" target="_blank" rel="noopener" hidden>Visit site <i class="bi bi-box-arrow-up-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
@@ -305,7 +627,11 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
+  <!-- Main JS File -->
+  <script src="assets/js/works.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

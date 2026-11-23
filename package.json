@@ -1,8 +1,8 @@
 {
-  "name": "hwl-plus-portfolio",
+  "name": "howell-valeros-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Hwl+ AI development studio portfolio (static site)",
+  "description": "Howell Valeros portfolio (static site)",
   "scripts": {
     "start": "serve . -l tcp://0.0.0.0:${PORT:-3000}"
   },
