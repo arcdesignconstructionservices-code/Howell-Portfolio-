@@ -95,11 +95,12 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <div><small class="pd-crumb-kind" id="dHeadKind">Portfolio</small><h1 class="mb-2 mb-lg-0" id="dHead">Portfolio Details</h1></div>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li class="current" id="dCrumb">Details</li>
           </ol>
         </nav>
       </div>
@@ -108,35 +109,40 @@
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container pd-grid">
 
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider"><img id="dImg" src="" alt="" class="img-fluid w-100"></div>
+        <div class="pd-main">
+          <div class="pd-media" id="dMedia">
+            <img id="dImg" src="" alt="">
+            <span class="pd-tag" id="dTag"></span>
           </div>
+          <div class="pd-thumbs" id="dThumbs" hidden></div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: <span id="dKind"></span></li>
-                <li><strong>Built by</strong>: Howell Valeros</li>
-                <li><strong>Stack</strong>: <span id="dStack"></span></li>
-                <li id="dUrlRow" hidden><strong>Project URL</strong>: <a id="dUrl" href="#" target="_blank" rel="noopener"></a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2 id="dTitle"></h2>
-              <p id="dBlurb"></p>
-              <ul id="dPoints"></ul>
-              <p><a href="index.html#portfolio"><i class="bi bi-arrow-left"></i> Back to portfolio</a></p>
-            </div>
+          <div class="pd-about">
+            <small class="pd-eyebrow">About this project</small>
+            <h2 id="dTitle"></h2>
+            <p class="pd-lead" id="dBlurb"></p>
+            <ul class="pd-points" id="dPoints"></ul>
           </div>
-
         </div>
 
+        <aside class="pd-side">
+          <div class="pd-card">
+            <h3>Project information</h3>
+            <dl>
+              <div><dt><i class="bi bi-tag"></i> Category</dt><dd id="dKind"></dd></div>
+              <div><dt><i class="bi bi-person"></i> Built by</dt><dd>Howell Valeros</dd></div>
+              <div><dt><i class="bi bi-activity"></i> Status</dt><dd id="dStatus"></dd></div>
+              <div class="pd-stack"><dt><i class="bi bi-stack"></i> Stack</dt><dd id="dStack"></dd></div>
+            </dl>
+            <a id="dUrl" class="pd-btn" href="#" target="_blank" rel="noopener" hidden>Visit live project <i class="bi bi-box-arrow-up-right"></i></a>
+            <a class="pd-btn ghost" href="index.html#portfolio"><i class="bi bi-arrow-left"></i> Back to portfolio</a>
+          </div>
+        </aside>
+
       </div>
+
+      <div class="container pd-nav" id="dNav"></div>
 
     </section><!-- /Portfolio Details Section -->
 
