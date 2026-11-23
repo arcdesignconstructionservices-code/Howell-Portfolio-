@@ -179,3 +179,19 @@ ORDER BY tasks DESC;` }
   });
   new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { r.classList.add('in'); o.disconnect(); } }), { threshold: 0.15 }).observe(r);
 })();
+
+/* Portfolio: reveal stagger + 3D tilt with cursor shine */
+(function () {
+  const sec = document.getElementById('portfolio');
+  if (!sec) return;
+  sec.querySelectorAll('.portfolio-item').forEach((it, i) => it.style.transitionDelay = (i % 3) * 0.12 + 's');
+  new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { sec.classList.add('in'); o.disconnect(); } }), { threshold: 0.1 }).observe(sec);
+  if (matchMedia('(hover: none)').matches) return;
+  sec.addEventListener('mousemove', e => {
+    const c = e.target.closest('.portfolio-content'); if (!c) return;
+    const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    c.style.setProperty('--ry', ((x - .5) * 10) + 'deg'); c.style.setProperty('--rx', ((.5 - y) * 10) + 'deg');
+    c.style.setProperty('--mx', (x * 100) + '%'); c.style.setProperty('--my', (y * 100) + '%');
+  });
+  sec.addEventListener('mouseout', e => { const c = e.target.closest('.portfolio-content'); if (c && !c.contains(e.relatedTarget)) { c.style.setProperty('--rx', '0deg'); c.style.setProperty('--ry', '0deg'); } });
+})();

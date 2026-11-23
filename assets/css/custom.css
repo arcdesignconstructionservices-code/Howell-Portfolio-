@@ -450,3 +450,30 @@ a { color: var(--accent-color); }
 @keyframes btnshine { 60%, 100% { left: 130%; } }
 .contact .php-email-form button[type=submit]:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(20,157,221,.4); }
 @media (prefers-reduced-motion: reduce) { .contact .info-item > i, .contact .php-email-form button[type=submit]::after { animation: none; } }
+
+/* Portfolio upgrade */
+.portfolio .portfolio-filters { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 0; margin-bottom: 34px; }
+.portfolio .portfolio-filters li { margin: 0; padding: 9px 22px; border-radius: 40px; border: 1px solid rgba(20,157,221,.35); background: transparent; font-size: 13px; font-weight: 600; letter-spacing: .08em; transition: all .3s; cursor: pointer; }
+.portfolio .portfolio-filters li:hover { transform: translateY(-2px); background: rgba(20,157,221,.1); }
+.portfolio .portfolio-filters li.filter-active { background: linear-gradient(90deg, #149ddd, #3bb4ea); border-color: transparent; color: #fff !important; box-shadow: 0 8px 20px rgba(20,157,221,.35); }
+
+.portfolio .portfolio-item { perspective: 900px; }
+.portfolio .portfolio-content { border-radius: 18px; box-shadow: 0 10px 30px rgba(8,30,55,.18); transform-style: preserve-3d; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .25s ease-out, box-shadow .35s; }
+.portfolio .portfolio-content:hover { box-shadow: 0 22px 50px rgba(20,157,221,.35); }
+.portfolio .portfolio-content::after { content: ""; position: absolute; inset: 0; border-radius: 18px; z-index: 4; pointer-events: none; border: 1.5px solid transparent; transition: border-color .35s; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.22), transparent 60%); opacity: 0; }
+.portfolio .portfolio-content:hover::after { opacity: 1; border-color: rgba(92,198,240,.8); }
+.portfolio .portfolio-content img { width: 100%; transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+.portfolio .portfolio-content:hover img { transform: scale(1.12); }
+
+.portfolio .portfolio-content .portfolio-info { display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; background: linear-gradient(180deg, rgba(6,20,38,0) 15%, rgba(6,20,38,.92) 100%); }
+.portfolio .portfolio-content .portfolio-info h4 { order: 2; background: none; padding: 0; font: 700 22px/1.2 var(--heading-font); transform: translateY(14px); opacity: 0; transition: all .4s ease .05s; }
+.portfolio .portfolio-content .portfolio-info p { order: 3; position: static; text-align: left; margin: 4px 0 0; font-size: 13px; font-weight: 500; color: #8fd8f7; letter-spacing: .04em; transform: translateY(14px); opacity: 0; transition: all .4s ease .12s; }
+.portfolio .portfolio-content:hover .portfolio-info h4, .portfolio .portfolio-content:hover .portfolio-info p { transform: none; opacity: 1; }
+.portfolio .portfolio-content .portfolio-info .preview-link, .portfolio .portfolio-content .portfolio-info .details-link { position: absolute; top: 16px; left: auto; right: 16px; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.14); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.3); font-size: 19px; line-height: 1; transform: scale(.4); opacity: 0; transition: all .4s cubic-bezier(.34,1.56,.64,1); }
+.portfolio .portfolio-content .portfolio-info .preview-link { right: 66px; }
+.portfolio .portfolio-content:hover .portfolio-info .preview-link, .portfolio .portfolio-content:hover .portfolio-info .details-link { transform: none; opacity: 1; }
+.portfolio .portfolio-content .portfolio-info .preview-link:hover, .portfolio .portfolio-content .portfolio-info .details-link:hover { background: var(--accent-color); border-color: var(--accent-color); color: #fff; transform: scale(1.12); }
+.portfolio .portfolio-item { opacity: 0; transform: translateY(34px) scale(.94); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.portfolio.in .portfolio-item { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .portfolio .portfolio-item { opacity: 1; transform: none; } .portfolio .portfolio-content { transform: none !important; } }
+@media (hover: none) { .portfolio .portfolio-content .portfolio-info { opacity: 1; } .portfolio .portfolio-content .portfolio-info h4, .portfolio .portfolio-content .portfolio-info p, .portfolio .portfolio-content .portfolio-info .preview-link, .portfolio .portfolio-content .portfolio-info .details-link { opacity: 1; transform: none; } }
