@@ -23,12 +23,6 @@ const WORKS = [
   { slug: 'workblocks', type: 'platform', name: 'Workblocks', mono: 'WB', kind: 'Capacity reporting',
     blurb: 'Turns a monthly plan export into a validated snapshot and the weekly capacity report.',
     points: ['Import, validate and save a snapshot of the plan.', 'Week-over-week comparison to see what changed.', 'Password-protected deletes and automatic table setup on first run.'],
-    stack: ['TanStack Start', 'React', 'PostgreSQL', 'Recharts', 'Railway'] },
-  { slug: 'tgocorp', type: 'site', name: 'tgocorp.com', mono: 'TGO', kind: 'WordPress website', url: 'https://tgocorp.com/',
-    blurb: 'A company website covering who they are, what they do and how to reach them.',
-    points: ['Designed and built on WordPress.', 'Public face of the company.'], stack: ['WordPress'] },
-  { slug: 'lastmilesupport', type: 'site', name: 'lastmilesupport.com', mono: 'LMS', kind: 'WordPress website', url: 'https://lastmilesupport.com/',
-    blurb: 'The brand website for Last Mile Support, and the home domain for its internal tools.',
-    points: ['Designed and built on WordPress.', 'Domain shared with the single sign-on gateway and tools.'], stack: ['WordPress'] }
+    stack: ['TanStack Start', 'React', 'PostgreSQL', 'Recharts', 'Railway'] }
 ];
 if (typeof module !== 'undefined') module.exports = WORKS;
