@@ -168,3 +168,14 @@ ORDER BY tasks DESC;` }
   }), { threshold: 0.25 });
   [stats, skills].forEach(s => s && io.observe(s));
 })();
+
+/* Resume: staggered reveal */
+(function () {
+  const r = document.getElementById('resume');
+  if (!r) return;
+  r.querySelectorAll('.resume-item').forEach((it, i) => {
+    it.style.setProperty('--d', (i * 0.18) + 's');
+    it.querySelectorAll('li').forEach((li, j) => li.style.setProperty('--li', (0.35 + j * 0.12) + 's'));
+  });
+  new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { r.classList.add('in'); o.disconnect(); } }), { threshold: 0.15 }).observe(r);
+})();
