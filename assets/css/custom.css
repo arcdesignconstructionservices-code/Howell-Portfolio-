@@ -383,3 +383,22 @@ a { color: var(--accent-color); }
   .code-win { display: flex; flex-direction: column; width: 100%; }
   .code-body { flex: 1; height: auto; min-height: 240px; }
 }
+
+/* Stats + Skills animation */
+.stats .stats-item { opacity: 0; transform: translateY(28px) scale(.92); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.stats.in .stats-item { opacity: 1; transform: none; }
+.stats.in .col-lg-4:nth-child(2) .stats-item { transition-delay: .15s; }
+.stats.in .col-lg-4:nth-child(3) .stats-item { transition-delay: .3s; }
+.stats .stats-item > i { position: relative; animation: statfloat 3.2s ease-in-out infinite; }
+.stats .col-lg-4:nth-child(2) .stats-item > i { animation-delay: .5s; }
+.stats .col-lg-4:nth-child(3) .stats-item > i { animation-delay: 1s; }
+@keyframes statfloat { 50% { transform: translateY(-6px); } }
+.stats .stats-item:hover > i { filter: drop-shadow(0 0 10px rgba(20,157,221,.6)); }
+
+.skills .progress { opacity: 0; transform: translateX(-24px); transition: opacity .6s ease, transform .6s ease; }
+.skills.in .progress { opacity: 1; transform: none; }
+.skills .progress-bar-wrap { overflow: hidden; border-radius: 10px; }
+.skills .progress-bar { width: 0; border-radius: 10px; position: relative; transition: width 1.6s cubic-bezier(.2,.8,.2,1); background: linear-gradient(90deg, #149ddd, #5cc6f0); }
+.skills .progress-bar::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); transform: translateX(-100%); animation: barshine 2.8s ease-in-out 1.8s infinite; }
+@keyframes barshine { to { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) { .stats .stats-item, .skills .progress { opacity: 1; transform: none; } .stats .stats-item > i, .skills .progress-bar::after { animation: none; } }

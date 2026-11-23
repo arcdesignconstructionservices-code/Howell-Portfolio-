@@ -145,3 +145,26 @@ ORDER BY tasks DESC;` }
   }
   tick();
 })();
+
+/* Stats + Skills: reveal, bar fill and % count-up */
+(function () {
+  const stats = document.getElementById('stats'), skills = document.getElementById('skills');
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target; io.unobserve(el); el.classList.add('in');
+    if (el.id === 'skills') el.querySelectorAll('.progress').forEach((p, i) => {
+      const bar = p.querySelector('.progress-bar'), val = p.querySelector('.val');
+      const to = +bar.getAttribute('aria-valuenow'), delay = i * 150;
+      setTimeout(() => {
+        bar.style.width = to + '%';
+        const t0 = performance.now();
+        (function step(t) {
+          const k = Math.min((t - t0) / 1600, 1);
+          val.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))) + '%';
+          if (k < 1) requestAnimationFrame(step);
+        })(t0);
+      }, delay);
+    });
+  }), { threshold: 0.25 });
+  [stats, skills].forEach(s => s && io.observe(s));
+})();
