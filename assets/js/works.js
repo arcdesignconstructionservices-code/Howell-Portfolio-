@@ -1,6 +1,6 @@
 /* Works built by Howell Valeros */
 const WORKS = [
-  { slug: 'arc-gateway', type: 'client', name: 'ARC+ Gateway', mono: 'ARC', kind: 'Client work · In progress', url: 'https://gateway.arcdesignconstructions.com/',
+  { slug: 'arc-gateway', type: 'client', imgs: ['arc-gateway','arc-gateway-2','arc-gateway-3','arc-gateway-4'], name: 'ARC+ Gateway', mono: 'ARC', kind: 'Client work · In progress', url: 'https://gateway.arcdesignconstructions.com/',
     blurb: 'A branded sign-in gateway I am building right now for my client ARC+ Design and Construction.',
     points: ['Client project for ARC+ Design and Construction, currently in development.', 'Branded sign-in page with rotating interior-design slides.', 'Sign in with email or username, with password reset sent by email.'],
     stack: ['Sign-in gateway', 'Web app', 'Railway'] },
