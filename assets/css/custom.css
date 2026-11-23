@@ -280,3 +280,13 @@ a { color: var(--accent-color); }
 .person-wrap { height: 94%; width: min(46%, 100vh); right: 2%; }
 .script-note { top: 14%; right: 6%; font-size: clamp(18px, 1.6vw, 26px); }
 @media (min-width: 1200px) and (max-height: 760px) { .hero-inner { padding-top: 28px; } .hero .welcome { margin-bottom: 20px; } }
+
+/* ---------- Compact v3: balanced hero height, small full portrait on the right, stats kept left ---------- */
+.hero { min-height: clamp(590px, 74vh, 690px); }
+.hero-inner { min-height: clamp(590px, 74vh, 690px); padding: 46px 4% 30px; }
+.hero-stats { margin-top: auto; width: 60%; }
+.hero .tagline, .hero-cta { }
+.person-wrap { height: min(78%, 470px); width: min(40%, 470px); right: 4%; bottom: 0; }
+.script-note { top: 9%; right: 8%; }
+@media (max-width: 1199px) { .hero-stats { width: 100%; } }
+@media (max-width: 991px) { .person-wrap { height: 70%; width: 70%; right: -6%; } }
