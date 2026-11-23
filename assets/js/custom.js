@@ -26,8 +26,8 @@ if (form) form.addEventListener('submit', e => {
     const n = Math.min(90, Math.floor(w * h / 14000));
     pts = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - .5) * .45, vy: (Math.random() - .5) * .45, r: Math.random() * 1.6 + .6 }));
     orbs = [
-      { x: .2, y: .3, r: .35, c: '20,157,221', s: .0006, p: 0 },
-      { x: .8, y: .7, r: .4, c: '14,100,150', s: .0008, p: 2 },
+      { x: .2, y: .3, r: .35, c: '60,190,255', s: .0006, p: 0 },
+      { x: .8, y: .7, r: .4, c: '30,130,200', s: .0008, p: 2 },
       { x: .6, y: .2, r: .25, c: '120,200,240', s: .0005, p: 4 }
     ];
   }
@@ -39,11 +39,13 @@ if (form) form.addEventListener('submit', e => {
 
   (function frame() {
     t++;
-    ctx.fillStyle = '#040b14'; ctx.fillRect(0, 0, w, h);
+    const base = ctx.createLinearGradient(0, 0, w, h);
+    base.addColorStop(0, '#12406e'); base.addColorStop(1, '#0a6aa6');
+    ctx.fillStyle = base; ctx.fillRect(0, 0, w, h);
     for (const o of orbs) {
       const x = (o.x + Math.sin(t * o.s * 6 + o.p) * .08) * w, y = (o.y + Math.cos(t * o.s * 5 + o.p) * .08) * h, r = o.r * Math.max(w, h);
       const g = ctx.createRadialGradient(x, y, 0, x, y, r);
-      g.addColorStop(0, `rgba(${o.c},.32)`); g.addColorStop(1, `rgba(${o.c},0)`);
+      g.addColorStop(0, `rgba(${o.c},.45)`); g.addColorStop(1, `rgba(${o.c},0)`);
       ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
     }
     for (const p of pts) {
@@ -65,4 +67,36 @@ if (form) form.addEventListener('submit', e => {
     }
     if (!reduce) requestAnimationFrame(frame);
   })();
+})();
+
+/* Hero: typing code window */
+(function codeWindow() {
+  const out = document.getElementById('codeOut'); if (!out) return;
+  const src = `// one sign-in for every tool
+import { verifySession } from "./auth";
+
+export async function guard(req: Request) {
+  const session = await verifySession(req);
+  if (!session) return redirect("/login");
+
+  if (!session.tools.includes("registry")) {
+    return new Response("Access denied", {
+      status: 403,
+    });
+  }
+  return next(req);
+}`;
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const TOK = /(\/\/.*)|("[^"\n]*")|\b(import|from|export|async|function|const|await|if|return|new)\b|\b(verifySession|redirect|includes|next|guard|Response)\b|\b(Request)\b/g;
+  const hl = s => esc(s).replace(TOK, (m, c, str, k, f, t) =>
+    `<span class="${c ? "tk-c" : str ? "tk-s" : k ? "tk-k" : f ? "tk-f" : "tk-t"}">${m}</span>`);
+  let i = 0, hold = 0;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { out.innerHTML = hl(src); return; }
+  setInterval(() => {
+    if (hold > 0) { hold--; return; }
+    i += 2;
+    out.innerHTML = hl(src.slice(0, i));
+    if (i >= src.length) { hold = 70; i = 0; setTimeout(() => {}, 0); }
+  }, 45);
 })();

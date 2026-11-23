@@ -4,3 +4,30 @@
 .portfolio-details .portfolio-description ul { padding-left: 18px; }
 .portfolio-details .portfolio-description li { margin-bottom: 6px; }
 [hidden] { display: none !important; }
+
+/* Hero: coded "image" on the right (code window + floating stack chips) */
+.hero-visual { position: absolute; z-index: 3; right: 5%; top: 50%; transform: translateY(-50%); width: min(540px, 42%); }
+.code-window { background: rgba(6, 16, 30, .82); border: 1px solid rgba(20, 157, 221, .35); border-radius: 16px; backdrop-filter: blur(10px); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8), 0 0 60px -20px rgba(20, 157, 221, .45); overflow: hidden; animation: floaty 7s ease-in-out infinite; }
+.code-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: rgba(255, 255, 255, .05); border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.code-bar i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+.code-bar i:nth-child(2) { background: #febc2e; }
+.code-bar i:nth-child(3) { background: #28c840; }
+.code-bar span { margin-left: 12px; font: 13px "Poppins", sans-serif; color: #8fa3b8; }
+.code-body { margin: 0; padding: 20px 22px; min-height: 330px; font: 13.5px/1.75 "SFMono-Regular", Consolas, "Liberation Mono", monospace; color: #d6e4f0; white-space: pre-wrap; display: block; }
+.code-body code { font: inherit; color: inherit; }
+.code-body .caret { display: inline-block; width: 8px; height: 1.1em; vertical-align: text-bottom; background: #149ddd; animation: blink 1s steps(1) infinite; }
+.tk-k { color: #149ddd; } .tk-s { color: #7ee0a5; } .tk-c { color: #5f7488; font-style: italic; } .tk-f { color: #ffd479; } .tk-t { color: #c792ea; }
+.code-status { display: flex; justify-content: space-between; padding: 10px 18px; font: 12px "Poppins", sans-serif; color: #8fa3b8; background: rgba(20, 157, 221, .1); border-top: 1px solid rgba(255, 255, 255, .06); }
+.code-status i { color: #28c840; margin-right: 6px; }
+.float-chip { position: absolute; display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 50px; background: rgba(6, 16, 30, .9); border: 1px solid rgba(20, 157, 221, .45); color: #fff; font: 500 13px "Poppins", sans-serif; box-shadow: 0 12px 30px -10px rgba(20, 157, 221, .5); animation: floaty 6s ease-in-out infinite; }
+.float-chip i { color: #149ddd; }
+.float-chip.c1 { top: -22px; left: -34px; animation-delay: -1s; }
+.float-chip.c2 { top: 28%; right: -30px; animation-delay: -3s; }
+.float-chip.c3 { bottom: 14%; left: -44px; animation-delay: -2s; }
+.float-chip.c4 { bottom: -22px; right: 40px; animation-delay: -4s; }
+@keyframes floaty { 50% { transform: translateY(-12px); } }
+@keyframes blink { 50% { opacity: 0; } }
+@media (max-width: 1199px) { .hero-visual { display: none; } }
+
+/* lighter hero: drop the template dark overlay */
+.hero:before { display: none; }
