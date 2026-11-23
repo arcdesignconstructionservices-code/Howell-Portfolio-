@@ -141,3 +141,93 @@ a { color: var(--accent-color); }
   .hero-stats strong { font-size: 24px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* =====================================================================
+   Hero upgrade: cut-out look for the photo + animation + interactivity
+   ===================================================================== */
+.hero { --px: 0; --py: 0; --mx: 70%; --my: 40%; }
+
+/* light, blurred "city" behind the portrait so the photo blends in like a cut-out */
+.hero-bg { background: linear-gradient(90deg, #040b14 0%, #071423 30%, #1d3347 42%, #8ea4b8 54%, #dbe6ee 66%, #eef3f7 100%); }
+.hero-bg .bld { background: linear-gradient(180deg, rgba(90, 115, 140, .38), rgba(90, 115, 140, .08)); filter: blur(18px); }
+.hero-bg .stripe { transition: transform .25s ease-out; }
+.hero-bg .s1 { transform: translate(calc(var(--px) * 26px), calc(var(--py) * 14px)); }
+.hero-bg .s2 { transform: translate(calc(var(--px) * 44px), calc(var(--py) * 22px)); }
+.hero-bg .s3 { transform: translate(calc(var(--px) * 64px), calc(var(--py) * 30px)); }
+
+/* the white studio backdrop of the photo disappears into the scene */
+.person-wrap { position: absolute; z-index: 2; right: 0; bottom: 0; height: 100%; width: min(64%, 100vh); transform: translate(calc(var(--px) * -16px), calc(var(--py) * -9px)); transition: transform .2s ease-out; pointer-events: none; mix-blend-mode: multiply; }
+.hero .hero-person { position: absolute; inset: 0; right: auto; bottom: auto; width: 100%; height: 100%; max-width: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%); mask-image: linear-gradient(90deg, transparent 0%, #000 14%); filter: saturate(1.04) contrast(1.04); animation: personFloat 9s ease-in-out infinite; }
+@keyframes personFloat { 50% { transform: translateY(-8px); } }
+
+/* cursor spotlight + particles */
+.hero-fx { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
+.hero-glow { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(420px circle at var(--mx) var(--my), rgba(60, 180, 240, .22), transparent 60%); }
+
+/* entrance choreography */
+@keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes drawLine { from { width: 0; } }
+.hero .welcome { animation: rise .7s .1s both; }
+.hero .welcome span { animation: drawLine .9s .3s both; }
+.hero .hello { animation: rise .9s .25s both; }
+.hero .roles { animation: rise .8s .5s both; }
+.hero .tagline { animation: rise .8s .65s both; }
+.hero-cta { animation: rise .8s .8s both; }
+.tech-bar { animation: rise .8s .95s both; }
+.hero-stats { animation: rise .9s 1.1s both; }
+.hero-stats li { animation: rise .7s both; }
+.hero-stats li:nth-child(1) { animation-delay: 1.25s; } .hero-stats li:nth-child(2) { animation-delay: 1.35s; }
+.hero-stats li:nth-child(3) { animation-delay: 1.45s; } .hero-stats li:nth-child(4) { animation-delay: 1.55s; }
+.script-note { animation: noteIn 1s 1.3s both, noteFloat 6s 2.3s ease-in-out infinite; }
+@keyframes noteIn { from { opacity: 0; transform: rotate(-12deg) translateY(20px); } }
+@keyframes noteFloat { 50% { transform: rotate(-10deg) translateY(-8px); } }
+.script-note svg path { stroke-dasharray: 170; stroke-dashoffset: 170; animation: drawLine2 1.2s 1.9s forwards; }
+@keyframes drawLine2 { to { stroke-dashoffset: 0; } }
+.hero .hello em { background-size: 220% 100%; background-image: linear-gradient(100deg, #7fd3f7, #149ddd 45%, #7fd3f7 90%); animation: shimmer 5s linear infinite; }
+@keyframes shimmer { to { background-position: -220% 0; } }
+
+/* buttons, chips, stats: hover / interactive states */
+.btn-main { position: relative; overflow: hidden; }
+.btn-main::after { content: ""; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent); transform: skewX(-20deg); transition: left .6s; }
+.btn-main:hover::after { left: 130%; }
+.tech-bar li { transition: transform .25s, background .25s; cursor: default; border-radius: 12px; }
+.tech-bar li:hover { transform: translateY(-4px); background: rgba(255, 255, 255, .06); }
+.tech-bar li:hover svg { animation: wiggle .5s; }
+@keyframes wiggle { 25% { transform: rotate(-12deg) scale(1.12); } 75% { transform: rotate(10deg) scale(1.12); } }
+.tech-bar .more { cursor: pointer; user-select: none; }
+.tech-bar .more i { transition: transform .3s; }
+.tech-bar .more[aria-expanded="true"] i { transform: rotate(45deg); }
+.tech-extra { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; max-height: 0; opacity: 0; overflow: hidden; transition: max-height .5s, opacity .4s, margin .4s; }
+.tech-extra.open { max-height: 140px; opacity: 1; margin-top: 12px; }
+.tech-extra li { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 50px; background: rgba(5, 12, 22, .78); border: 1px solid rgba(20, 157, 221, .4); color: #fff; font: 500 13px var(--nav-font); backdrop-filter: blur(8px); transform: translateY(8px); transition: transform .35s, background .25s; }
+.tech-extra.open li { transform: none; }
+.tech-extra.open li:nth-child(2) { transition-delay: .05s; } .tech-extra.open li:nth-child(3) { transition-delay: .1s; }
+.tech-extra.open li:nth-child(4) { transition-delay: .15s; } .tech-extra.open li:nth-child(5) { transition-delay: .2s; } .tech-extra.open li:nth-child(6) { transition-delay: .25s; }
+.tech-extra li:hover { background: rgba(20, 157, 221, .25); transform: translateY(-3px); }
+.tech-extra i { color: #5cc6f0; }
+.hero-stats li { transition: transform .3s, background .3s; border-radius: 14px; }
+.hero-stats li:hover { transform: translateY(-5px); background: rgba(255, 255, 255, .05); }
+.hero-stats li:hover > i { animation: bounceIcon .6s; }
+@keyframes bounceIcon { 40% { transform: translateY(-8px) scale(1.15); } 70% { transform: translateY(2px); } }
+
+/* sidebar: spinning avatar ring, logo hover */
+.header .profile-img { background: none; }
+.header .profile-img::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, #5cc6f0, #0b6fa0, #5cc6f0); animation: spinRing 6s linear infinite; }
+.header .profile-img .avatar { position: relative; z-index: 1; }
+.header .profile-img .online { z-index: 2; }
+@keyframes spinRing { to { transform: rotate(360deg); } }
+.brand { transition: transform .35s; }
+.brand:hover { transform: scale(1.08) rotate(-3deg); }
+
+@media (max-width: 991px) {
+  .person-wrap { width: 100%; opacity: .5; }
+  .hero-glow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero *, .hero { animation: none !important; }
+  .hero .welcome, .hero .hello, .hero .roles, .hero .tagline, .hero-cta, .tech-bar, .hero-stats, .hero-stats li { opacity: 1 !important; }
+}
+
+/* real cut-out: no blend needed, add depth instead */
+.hero.cutout .person-wrap { mix-blend-mode: normal; }
+.hero.cutout .hero-person { -webkit-mask-image: none; mask-image: none; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .45)) saturate(1.04) contrast(1.03); }
