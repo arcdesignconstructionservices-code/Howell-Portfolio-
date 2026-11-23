@@ -44,37 +44,48 @@
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <a href="index.html#hero" class="brand" aria-label="Howell Valeros home"><svg viewBox="0 0 150 56" class="hv-logo" aria-hidden="true">
-        <path d="M6 6h12v16h18V6h12v44H36V33H18v17H6z" fill="#149ddd"/>
-        <path d="M54 6h14l10 26L88 6h12L84 50H72z" fill="#fff" transform="translate(18 0)"/>
-        <path d="M112 12l8 10 20-18" fill="none" stroke="#149ddd" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" transform="translate(-6 8)"/>
-      </svg></a>
-
-    <div class="profile-img">
-      <div class="avatar"><img src="assets/img/howell.jpeg" alt="Howell Valeros"></div>
-      <span class="online" aria-hidden="true"></span>
-    </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Howell Valeros</h1>
+    <a href="index.html#hero" class="brand-row" aria-label="Howell Valeros home">
+      <svg viewBox="0 0 120 52" class="hv-logo" aria-hidden="true">
+        <path d="M4 6h9v15h15V6h9v40h-9V30H13v16H4z" fill="#fff"/>
+        <path d="M44 6h11l11 27L77 6h11L72 46H60z" fill="url(#hvg)"/>
+        <path d="M96 20l8 9 14-17" fill="none" stroke="#5cc6f0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(-14 4)"/>
+        <defs><linearGradient id="hvg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fd3f7"/><stop offset="1" stop-color="#149ddd"/></linearGradient></defs>
+      </svg>
+      <span class="brand-div"></span>
+      <span class="brand-text"><b>Howell Valeros</b><small>PORTFOLIO</small></span>
     </a>
-    <p class="side-role">AI Automation Developer</p>
-    <p class="side-status"><i></i> Open to Projects</p>
+
+    <div class="profile-row">
+      <div class="profile-img">
+        <div class="avatar"><img src="assets/img/howell.jpeg" alt="Howell Valeros"></div>
+        <span class="online" aria-hidden="true"></span>
+      </div>
+      <div class="profile-info">
+        <a href="index.html" class="logo"><h1 class="sitename">Howell Valeros</h1></a>
+        <p class="side-role">AI Automation Developer</p>
+        <span class="role-line"></span>
+        <p class="side-status"><i></i> Open to Projects</p>
+      </div>
+    </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="index.html#hero" class="active"><i class="bi bi-house-door navicon"></i>Home</a></li>
-        <li><a href="index.html#about"><i class="bi bi-person-fill navicon"></i> About</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="index.html#services"><i class="bi bi-hdd-stack-fill navicon"></i> Services</a></li>
-        <li><a href="index.html#contact"><i class="bi bi-envelope-fill navicon"></i> Contact</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-folder2 navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-gear navicon"></i> Services</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
     <div class="side-foot">
-      <p class="side-pitch"><i class="bi bi-send"></i> Let's work together<span>Bring your ideas to life.</span></p>
-      <a href="index.html#contact" class="side-cta">Contact Me <i class="bi bi-arrow-right"></i></a>
+      <div class="side-pitch"><i class="bi bi-send"></i><div><strong>Let's work together</strong><span>Bring your ideas to life.</span></div></div>
+      <a href="index.html#contact" class="side-cta"><i class="bi bi-envelope"></i> Contact Me <i class="bi bi-arrow-right"></i></a>
+      <div class="side-meta">
+        <span class="side-loc"><i class="bi bi-geo-alt"></i> Pasig City, Philippines</span>
+        <div class="side-social"><a href="mailto:howellsayson@gmail.com" aria-label="Email Howell"><i class="bi bi-envelope-fill"></i></a></div>
+      </div>
     </div>
   </header>
 

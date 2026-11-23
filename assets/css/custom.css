@@ -290,3 +290,74 @@ a { color: var(--accent-color); }
 .script-note { top: 9%; right: 8%; }
 @media (max-width: 1199px) { .hero-stats { width: 100%; } }
 @media (max-width: 991px) { .person-wrap { height: 70%; width: 70%; right: -6%; } }
+
+/* =====================================================================
+   Sidebar v2 (from your reference): brand row, profile row, bigger nav, CTA + social
+   ===================================================================== */
+.header { padding: 0 16px 14px; overflow-x: hidden; }
+.header::before { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0; background: radial-gradient(420px 240px at -12% -4%, rgba(20, 157, 221, .26), transparent 62%), radial-gradient(380px 220px at 112% 104%, rgba(20, 157, 221, .22), transparent 62%); }
+.header::after { content: ""; position: absolute; left: -45%; bottom: -16%; width: 150%; height: 26%; border-radius: 50%; border-top: 1.5px solid rgba(92, 198, 240, .32); background: linear-gradient(180deg, rgba(20, 157, 221, .12), transparent 70%); pointer-events: none; z-index: 0; }
+.header .brand-row, .header .profile-row, .header .navmenu, .header .side-foot { position: relative; z-index: 1; }
+
+/* brand row */
+.brand-row { display: flex; align-items: center; gap: 12px; margin: 22px 2px 16px; }
+.brand-row .hv-logo { width: 62px; flex: none; margin: 0; }
+.brand-div { width: 1px; height: 34px; background: rgba(255, 255, 255, .18); flex: none; }
+.brand-text b { display: block; color: #fff; font: 600 15px/1.1 var(--nav-font); }
+.brand-text small { display: block; margin-top: 5px; font: 400 9.5px var(--nav-font); letter-spacing: .4em; color: #8da3b6; }
+.header .brand { display: none; }
+
+/* profile row */
+.profile-row { display: flex; align-items: center; gap: 14px; padding: 4px 2px 18px; margin-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.profile-row .profile-img { width: 88px; margin: 0; flex: none; }
+.profile-info { min-width: 0; }
+.profile-info .logo { justify-content: flex-start !important; margin: 0; }
+.profile-info .logo h1 { font-size: 17px; margin: 0; white-space: nowrap; }
+.profile-info .side-role { text-align: left; margin: 4px 0 8px; font-size: 12px; white-space: nowrap; }
+.role-line { display: block; width: 34px; height: 2px; border-radius: 2px; background: var(--accent-color); margin-bottom: 10px; }
+.profile-info .side-status { margin: 0; width: fit-content; padding: 4px 12px; font-size: 11px; }
+
+/* nav */
+.navmenu ul { padding-bottom: 8px; }
+.navmenu a, .navmenu a:focus { padding: 11px 14px; margin: 5px 0; border-radius: 14px; font-size: 15px; border: 1px solid transparent; }
+.navmenu a .navicon { font-size: 22px; margin-right: 16px; }
+.navmenu a.active, .navmenu a.active:focus { border-color: rgba(255, 255, 255, .1); background: linear-gradient(90deg, rgba(20, 157, 221, .34), rgba(255, 255, 255, .03)); }
+.navmenu a.active .navicon { color: #5cc6f0; }
+.navmenu a.active::before { content: ""; position: absolute; left: -17px; top: 8%; bottom: 8%; width: 5px; border-radius: 0 6px 6px 0; background: var(--accent-color); box-shadow: 0 0 14px rgba(20, 157, 221, .8); }
+
+/* footer */
+.side-foot { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .08); }
+.side-pitch { display: flex; align-items: center; gap: 14px; margin: 0 0 12px 4px; }
+.side-pitch > i { font-size: 26px; color: #5cc6f0; }
+.side-pitch strong { display: block; color: #fff; font: 600 15px var(--nav-font); }
+.side-pitch span { display: block; margin: 2px 0 0; flex: none; font: 400 12px var(--nav-font); color: #9aaebf; }
+.side-cta { border-radius: 40px; padding: 12px 14px; gap: 10px; }
+.side-meta { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .08); text-align: center; }
+.side-loc { display: block; font: 400 12px var(--nav-font); color: #9aaebf; }
+.side-loc i { color: #5cc6f0; margin-right: 6px; }
+.side-social { display: flex; justify-content: center; gap: 12px; margin-top: 12px; }
+.side-social a { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .14); background: rgba(255, 255, 255, .04); color: #fff; font-size: 16px; transition: transform .25s, background .25s, border-color .25s; }
+.side-social a:hover { transform: translateY(-3px); background: var(--accent-color); border-color: var(--accent-color); color: #fff; }
+
+/* Sidebar v2: tighter so it fits without scrolling on normal screens */
+.brand-row { margin: 16px 2px 12px; }
+.brand-row .hv-logo { width: 54px; }
+.profile-row { padding-bottom: 12px; margin-bottom: 8px; }
+.profile-row .profile-img { width: 78px; }
+.navmenu a, .navmenu a:focus { padding: 8px 14px; margin: 3px 0; font-size: 14.5px; border-radius: 12px; }
+.navmenu a .navicon { font-size: 20px; margin-right: 14px; }
+.side-foot { padding-top: 10px; }
+.side-pitch { margin-bottom: 8px; }
+.side-pitch > i { font-size: 22px; }
+.side-cta { padding: 10px 14px; }
+.side-meta { margin-top: 10px; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; text-align: left; }
+.side-social { margin-top: 0; }
+.side-social a { width: 32px; height: 32px; font-size: 14px; }
+@media (max-height: 800px) {
+  .side-pitch span, .brand-text small { display: none; }
+  .navmenu a, .navmenu a:focus { padding: 6px 14px; margin: 2px 0; }
+  .side-pitch { margin-bottom: 6px; }
+}
+
+/* keep the decorative curve inside the sidebar so it never adds scroll height */
+.header::after { bottom: 0; height: 13%; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
