@@ -529,3 +529,9 @@ a { color: var(--accent-color); }
 .pw-body h3 { font-size: 20px; }
 .pw-body > p { -webkit-line-clamp: 2; }
 @media (max-width: 767px) { .pw-slide { flex-basis: 82%; } .pw-nav { display: none; } }
+
+/* Client work cards use real photos */
+.filter-client .pw-cover img { object-position: center 45%; }
+.filter-client .pw-num { text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+.filter-client .pw-cover::after { background: linear-gradient(180deg, rgba(6,20,38,.35), transparent 35%, rgba(6,20,38,.55)); }
+#dImg { max-height: 520px; object-fit: cover; object-position: center 45%; border-radius: 14px; }

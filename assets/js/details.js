@@ -4,7 +4,7 @@
   const w = WORKS.find(x => x.slug === slug) || WORKS[0];
   const $ = s => document.querySelector(s);
   document.title = w.name + ' — Howell Valeros';
-  $('#dImg').src = 'assets/img/portfolio/' + w.slug + '.svg';
+  $('#dImg').src = 'assets/img/portfolio/' + w.slug + (w.type === 'client' ? '.jpg' : '.svg');
   $('#dImg').alt = w.name;
   $('#dKind').textContent = w.kind;
   $('#dStack').textContent = w.stack.join(', ');
