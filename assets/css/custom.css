@@ -381,5 +381,5 @@ a { color: var(--accent-color); }
 @media (min-width: 992px) {
   #about .col-lg-4 { display: flex; }
   .code-win { display: flex; flex-direction: column; width: 100%; }
-  .code-body { flex: 1; height: auto; min-height: 330px; }
+  .code-body { flex: 1; height: auto; min-height: 240px; }
 }
