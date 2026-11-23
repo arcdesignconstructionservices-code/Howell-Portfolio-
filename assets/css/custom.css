@@ -540,3 +540,8 @@ a { color: var(--accent-color); }
 .pw-card, .pw-card::before, .pw-cover { border-radius: 0; }
 .pw-logo { position: absolute; z-index: 2; left: 14px; top: 12px; width: 64px; height: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.55)); }
 .pw-cover .pw-logo, .pw-card:hover .pw-cover .pw-logo { width: 64px; height: auto; transform: none; object-fit: contain; }
+
+/* Payroll dashboard screenshot as cover */
+.pw-shot .pw-cover img { object-position: 22% 0; }
+.pw-shot .pw-logo, .pw-shot .pw-num { display: none; }
+.pw-shot .pw-cover::after { background: linear-gradient(180deg, transparent 60%, rgba(6,20,38,.5)); }
