@@ -477,3 +477,32 @@ a { color: var(--accent-color); }
 .portfolio.in .portfolio-item { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .portfolio .portfolio-item { opacity: 1; transform: none; } .portfolio .portfolio-content { transform: none !important; } }
 @media (hover: none) { .portfolio .portfolio-content .portfolio-info { opacity: 1; } .portfolio .portfolio-content .portfolio-info h4, .portfolio .portfolio-content .portfolio-info p, .portfolio .portfolio-content .portfolio-info .preview-link, .portfolio .portfolio-content .portfolio-info .details-link { opacity: 1; transform: none; } }
+
+/* Portfolio REDESIGN: project cards */
+.pw-card { position: relative; height: 100%; display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; background: var(--surface-color); border: 1px solid rgba(20,157,221,.18); box-shadow: 0 8px 26px rgba(8,30,55,.1); transform: perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); transition: transform .25s ease-out, box-shadow .35s, border-color .35s; }
+.pw-card::before { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: 20px; opacity: 0; transition: opacity .35s; background: radial-gradient(300px circle at var(--mx,50%) var(--my,50%), rgba(92,198,240,.18), transparent 60%); }
+.pw-card:hover { box-shadow: 0 24px 54px rgba(20,157,221,.3); border-color: rgba(20,157,221,.7); }
+.pw-card:hover::before { opacity: 1; }
+.pw-cover { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 9; }
+.pw-cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.pw-card:hover .pw-cover img { transform: scale(1.1); }
+.pw-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(6,20,38,.55)); }
+.pw-num { position: absolute; z-index: 2; left: 16px; top: 14px; font: 600 12px var(--nav-font); letter-spacing: .25em; color: rgba(255,255,255,.8); }
+.pw-badge { position: absolute; z-index: 2; right: 14px; top: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 30px; font: 600 11px var(--nav-font); letter-spacing: .04em; color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(6px); }
+.pw-body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 18px; }
+.pw-kind { display: block; font: 600 11.5px var(--nav-font); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-color); margin-bottom: 6px; }
+.pw-body h3 { font-size: 21px; margin: 0 0 8px; }
+.pw-body h3 a { color: var(--heading-color); transition: color .3s; }
+.pw-card:hover .pw-body h3 a { color: var(--accent-color); }
+.pw-body h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.pw-body > p { font-size: 14px; line-height: 1.6; margin: 0 0 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; opacity: .85; }
+.pw-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+.pw-chips span { padding: 4px 11px; border-radius: 30px; font: 500 11.5px var(--nav-font); color: var(--accent-color); background: rgba(20,157,221,.1); border: 1px solid rgba(20,157,221,.22); }
+.pw-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(20,157,221,.15); }
+.pw-more { font: 600 14px var(--nav-font); color: var(--heading-color); display: inline-flex; align-items: center; gap: 8px; }
+.pw-more i { color: var(--accent-color); transition: transform .3s; }
+.pw-card:hover .pw-more i { transform: translateX(7px); }
+.pw-live { position: relative; z-index: 4; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(20,157,221,.4); color: var(--accent-color); transition: all .3s; }
+.pw-live:hover { background: var(--accent-color); color: #fff; transform: rotate(12deg) scale(1.1); }
+.portfolio .portfolio-item { perspective: none; }
+@media (prefers-reduced-motion: reduce) { .pw-card { transform: none !important; } }
