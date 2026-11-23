@@ -8,7 +8,7 @@ const WORKS = [
     blurb: 'An inventory tool I am building for my client ARC+ Design and Construction.',
     points: ['Client project for ARC+ Design and Construction, currently in development.', 'Sign-in with the ARC+ branded login page.', 'Hosted on Railway.'],
     stack: ['Inventory Tool', 'Web app', 'Railway'] },
-  { slug: 'arc-procurement', type: 'client', name: 'ARC+ Procurement', mono: 'ARC', kind: 'Client work · Procurement', url: 'https://procurement-and-financial-transaction-documents-production.up.railway.app/',
+  { slug: 'arc-procurement', type: 'client', imgs: ['arc-procurement','arc-procurement-2','arc-procurement-3','arc-procurement-4','arc-procurement-5','arc-procurement-6'], name: 'ARC+ Procurement', mono: 'ARC', kind: 'Client work · Procurement', url: 'https://procurement-and-financial-transaction-documents-production.up.railway.app/',
     blurb: 'A tool for procurement and financial transaction documents, built for my client ARC+ Design and Construction.',
     points: ['Client project for ARC+ Design and Construction, currently in development.', 'Sign-in with the ARC+ branded login page.', 'Hosted on Railway.'],
     stack: ['Procurement', 'Web app', 'Railway'] },
