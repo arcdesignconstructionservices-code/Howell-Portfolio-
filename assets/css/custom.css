@@ -535,3 +535,8 @@ a { color: var(--accent-color); }
 .filter-client .pw-num { text-shadow: 0 1px 8px rgba(0,0,0,.5); }
 .filter-client .pw-cover::after { background: linear-gradient(180deg, rgba(6,20,38,.35), transparent 35%, rgba(6,20,38,.55)); }
 #dImg { max-height: 520px; object-fit: cover; object-position: center 45%; border-radius: 14px; }
+
+/* Square corners on portfolio cards + client logo on photo */
+.pw-card, .pw-card::before, .pw-cover { border-radius: 0; }
+.pw-logo { position: absolute; z-index: 2; left: 14px; top: 12px; width: 64px; height: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.55)); }
+.pw-cover .pw-logo, .pw-card:hover .pw-cover .pw-logo { width: 64px; height: auto; transform: none; object-fit: contain; }
