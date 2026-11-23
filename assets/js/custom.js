@@ -83,3 +83,63 @@ if (form) form.addEventListener('submit', e => {
     requestAnimationFrame(frame);
   })();
 })();
+
+/* About: typing code animation */
+(function () {
+  const out = document.getElementById('codeOut');
+  if (!out) return;
+  const file = document.getElementById('codeFile'), lang = document.getElementById('codeLang');
+  const snippets = [
+    { f: 'howell.ts', l: 'TypeScript', c:
+`// who am I?
+const howell = {
+  name: "Howell S. Valeros",
+  role: "AI Automation Developer",
+  stack: ["TypeScript", "React", "SQL", "PostgreSQL"],
+  location: "Pasig City, PH",
+  available: true,
+};
+
+function build(idea: string) {
+  const plan = ai.assist(idea);
+  return deploy(plan);
+}` },
+    { f: 'pipeline.py', l: 'Python', c:
+`# automate the boring stuff
+import pandas as pd
+
+def run_pipeline(source):
+    df = pd.read_sql(source, conn)
+    df = df.dropna().drop_duplicates()
+    df["status"] = "ready"
+    df.to_sql("reports", conn)
+    return len(df)
+
+print(run_pipeline("dispatch_data"))` },
+    { f: 'query.sql', l: 'PostgreSQL', c:
+`-- keep the data clean
+SELECT p.name, COUNT(t.id) AS tasks
+FROM platforms p
+JOIN tasks t ON t.platform_id = p.id
+WHERE t.status = 'done'
+GROUP BY p.name
+ORDER BY tasks DESC;` }
+  ];
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const hl = s => esc(s)
+    .replace(/(\/\/.*|#.*|--.*)$/gm, '<span class="tk-c">$1</span>')
+    .replace(/("[^"]*")/g, '<span class="tk-s">$1</span>')
+    .replace(/\b(const|function|return|import|as|def|from|SELECT|FROM|JOIN|WHERE|GROUP BY|ORDER BY|ON|AS|DESC|COUNT|true)\b/g, '<span class="tk-k">$1</span>')
+    .replace(/\b(\w+)(?=\()/g, '<span class="tk-f">$1</span>');
+  let si = 0, i = 0;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tick() {
+    const s = snippets[si];
+    if (i === 0) { file.textContent = s.f; lang.textContent = s.l; }
+    if (reduce) i = s.c.length; else i += 2;
+    out.innerHTML = hl(s.c.slice(0, i));
+    if (i < s.c.length) return setTimeout(tick, 28);
+    setTimeout(() => { i = 0; si = (si + 1) % snippets.length; out.innerHTML = ''; tick(); }, 2600);
+  }
+  tick();
+})();
