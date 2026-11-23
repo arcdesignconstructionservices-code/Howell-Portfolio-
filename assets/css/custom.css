@@ -627,3 +627,9 @@ a { color: var(--accent-color); }
 .pd-media.shot .pd-tag { display: none; }
 .pd-thumbs button { aspect-ratio: 2 / 1; background: #0b1a2b; }
 .pd-media.shot ~ .pd-thumbs button img { object-fit: contain; object-position: center; }
+
+/* Download CV (outline button next to View My Work) */
+.btn-main.btn-outline { background: rgba(255,255,255,.04); border: 1.5px solid rgba(92,198,240,.75); color: #fff; box-shadow: none; backdrop-filter: blur(4px); }
+.btn-main.btn-outline:hover { background: linear-gradient(135deg, #3bb4f0, #0f82bd); border-color: transparent; box-shadow: 0 18px 36px -14px rgba(20,157,221,.9); }
+.btn-main.btn-outline .bi-download { transition: transform .3s; }
+.btn-main.btn-outline:hover .bi-download { transform: translateY(3px); }
