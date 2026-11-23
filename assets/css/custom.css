@@ -619,3 +619,11 @@ a { color: var(--accent-color); }
 @media (max-width: 991px) { .pd-grid { grid-template-columns: 1fr; } .pd-side { position: static; } .pd-about h2 { font-size: 28px; } }
 @media (max-width: 575px) { .pd-nav { grid-template-columns: 1fr; } .pd-nav-next { text-align: left; } }
 .page-title .breadcrumbs { margin-right: 96px; }
+
+/* Screenshots: show the whole image, never cropped */
+.pd-media.shot { aspect-ratio: 2 / 1; background: #0b1a2b; }
+.pd-media.shot #dImg { object-fit: contain; object-position: center; }
+.pd-media.shot::after { display: none; }
+.pd-media.shot .pd-tag { display: none; }
+.pd-thumbs button { aspect-ratio: 2 / 1; background: #0b1a2b; }
+.pd-media.shot ~ .pd-thumbs button img { object-fit: contain; object-position: center; }
