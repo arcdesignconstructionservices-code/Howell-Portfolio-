@@ -545,3 +545,13 @@ a { color: var(--accent-color); }
 .pw-shot .pw-cover img { object-position: 22% 0; }
 .pw-shot .pw-logo, .pw-shot .pw-num { display: none; }
 .pw-shot .pw-cover::after { background: linear-gradient(180deg, transparent 60%, rgba(6,20,38,.5)); }
+
+/* Auto-rotating screenshot covers (Payroll) */
+.pw-shot .pw-cover img { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+.pw-shot .pw-cover img.is-on { opacity: 1; }
+.pw-cdots { position: absolute; z-index: 3; right: 14px; bottom: 16px; display: flex; gap: 5px; }
+.pw-cdots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.5); transition: all .3s; }
+.pw-cdots i.on { width: 18px; border-radius: 6px; background: #fff; }
+.d-dots { position: absolute; left: 0; right: 0; bottom: 14px; display: flex; justify-content: center; gap: 7px; }
+.d-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.6); box-shadow: 0 1px 4px rgba(0,0,0,.4); transition: all .3s; }
+.d-dots button.on { width: 24px; border-radius: 8px; background: var(--accent-color); }

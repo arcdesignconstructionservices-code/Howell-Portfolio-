@@ -222,3 +222,18 @@ ORDER BY tasks DESC;` }
   track.addEventListener('dragstart', e => e.preventDefault());
   setTimeout(upd, 300);
 })();
+
+/* Portfolio: auto-rotating screenshot covers */
+(function () {
+  document.querySelectorAll('.pw-shot .pw-cover').forEach(cover => {
+    const imgs = [...cover.querySelectorAll('img:not(.pw-logo)')]; if (imgs.length < 2) return;
+    const dots = document.createElement('span'); dots.className = 'pw-cdots';
+    imgs.forEach(() => dots.appendChild(document.createElement('i'))); cover.appendChild(dots);
+    let i = 0, paused = false;
+    const show = k => { i = k; imgs.forEach((im, j) => im.classList.toggle('is-on', j === i)); [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
+    show(0);
+    cover.closest('.pw-card').addEventListener('mouseenter', () => paused = true);
+    cover.closest('.pw-card').addEventListener('mouseleave', () => paused = false);
+    setInterval(() => { if (!paused && !document.hidden) show((i + 1) % imgs.length); }, 3200);
+  });
+})();

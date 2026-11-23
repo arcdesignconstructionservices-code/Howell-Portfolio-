@@ -12,7 +12,7 @@ const WORKS = [
     blurb: 'A tool for procurement and financial transaction documents, built for my client ARC+ Design and Construction.',
     points: ['Client project for ARC+ Design and Construction, currently in development.', 'Sign-in with the ARC+ branded login page.', 'Hosted on Railway.'],
     stack: ['Procurement', 'Web app', 'Railway'] },
-  { slug: 'arc-payroll', type: 'client', name: 'ARC+ Payroll', mono: 'ARC', kind: 'Client work · Payroll', url: 'https://payroll-production-880d009f.up.railway.app/',
+  { slug: 'arc-payroll', type: 'client', imgs: ['arc-payroll','arc-payroll-2','arc-payroll-3','arc-payroll-4','arc-payroll-5'], name: 'ARC+ Payroll', mono: 'ARC', kind: 'Client work · Payroll', url: 'https://payroll-production-880d009f.up.railway.app/',
     blurb: 'A payroll tool I am building for my client ARC+ Design and Construction.',
     points: ['Client project for ARC+ Design and Construction, currently in development.', 'Sign-in with the ARC+ branded login page.', 'Hosted on Railway.'],
     stack: ['Payroll', 'Web app', 'Railway'] },
