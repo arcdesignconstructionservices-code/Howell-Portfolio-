@@ -2,3 +2,8 @@
 .portfolio-details .portfolio-description ul { padding-left: 18px; }
 .portfolio-details .portfolio-description li { margin-bottom: 6px; }
 [hidden] { display: none !important; }
+
+/* Hero: Howell's portrait on the right, faded into the dark background */
+.hero { background: #040b14; }
+.hero > img.hero-face { inset: auto; top: 0; right: 0; width: auto; height: 100%; max-width: 75%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 15%; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%); mask-image: linear-gradient(to right, transparent 0%, #000 45%); }
+@media (max-width: 991px) { .hero > img.hero-face { width: 100%; opacity: .55; -webkit-mask-image: none; mask-image: none; } }
