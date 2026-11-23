@@ -10,6 +10,6 @@
 <circle cx="700" cy="40" r="210" fill="#fff" fill-opacity=".07"/>
 <circle cx="90" cy="560" r="150" fill="#fff" fill-opacity=".05"/>
 <text x="400" y="320" text-anchor="middle" font-family="Raleway, Arial, sans-serif" font-weight="800" font-size="170" fill="#fff" letter-spacing="-6">ARC+</text>
-<text x="400" y="400" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="30" fill="#fff" fill-opacity=".85">Client work · In progress</text>
+<text x="400" y="400" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="30" fill="#fff" fill-opacity=".85">Gateway</text>
 <text x="46" y="70" font-family="Poppins, Arial, sans-serif" font-size="24" letter-spacing="6" fill="#fff" fill-opacity=".7">CLIENT</text>
 </svg>
