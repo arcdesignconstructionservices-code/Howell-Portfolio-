@@ -415,3 +415,19 @@ a { color: var(--accent-color); }
 .resume .resume-item li { opacity: 0; transform: translateX(-14px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--d, 0s) + var(--li, 0s)); }
 .resume.in .resume-item li { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .resume .resume-title, .resume .resume-item, .resume .resume-item li { opacity: 1; transform: none; } .resume .resume-item::before { animation: none; } }
+
+/* Services animation */
+.services .service-item { padding: 14px 16px; margin: -14px -16px; border-radius: 16px; transition: transform .35s ease, background .35s ease, box-shadow .35s ease; }
+.services .service-item:hover { transform: translateY(-6px); background: rgba(20,157,221,.07); box-shadow: 0 14px 34px rgba(20,157,221,.16); }
+.services .service-item .icon { position: relative; transform: scale(0) rotate(-90deg); transition: transform .8s cubic-bezier(.34,1.56,.64,1) .25s, background .3s; }
+.services .service-item.aos-animate .icon { transform: none; }
+.services .service-item .icon::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(20,157,221,.55); animation: svcring 2.8s ease-out infinite; pointer-events: none; }
+.services .service-item:nth-child(even) .icon::after { animation-delay: .9s; }
+.services .service-item:nth-child(3n) .icon::after { animation-delay: 1.8s; }
+@keyframes svcring { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.7); opacity: 0; } }
+.services .service-item:hover .icon i { animation: svcwob .6s ease; }
+@keyframes svcwob { 25% { transform: rotate(-14deg) scale(1.15); } 60% { transform: rotate(10deg) scale(1.15); } }
+.services .service-item .title { position: relative; display: inline-block; }
+.services .service-item .title::after { content: ""; position: absolute; left: 0; bottom: -3px; height: 2px; width: 0; background: linear-gradient(90deg, #149ddd, #5cc6f0); transition: width .4s ease; }
+.services .service-item:hover .title::after { width: 100%; }
+@media (prefers-reduced-motion: reduce) { .services .service-item .icon { transform: none; } .services .service-item .icon::after { animation: none; } }
