@@ -4,7 +4,7 @@ const WORKS = [
     blurb: 'A branded sign-in gateway I am building right now for my client ARC+ Design and Construction.',
     points: ['Client project for ARC+ Design and Construction, currently in development.', 'Branded sign-in page with rotating interior-design slides.', 'Sign in with email or username, with password reset sent by email.'],
     stack: ['Sign-in gateway', 'Web app', 'Railway'] },
-  { slug: 'arc-inventory', type: 'client', name: 'ARC+ Inventory Tool', mono: 'ARC', kind: 'Client work · Inventory', url: 'https://inventory-production-095f388b.up.railway.app/',
+  { slug: 'arc-inventory', type: 'client', imgs: ['arc-inventory','arc-inventory-2','arc-inventory-3','arc-inventory-4'], name: 'ARC+ Inventory Tool', mono: 'ARC', kind: 'Client work · Inventory', url: 'https://inventory-production-095f388b.up.railway.app/',
     blurb: 'An inventory tool I am building for my client ARC+ Design and Construction.',
     points: ['Client project for ARC+ Design and Construction, currently in development.', 'Sign-in with the ARC+ branded login page.', 'Hosted on Railway.'],
     stack: ['Inventory Tool', 'Web app', 'Railway'] },
