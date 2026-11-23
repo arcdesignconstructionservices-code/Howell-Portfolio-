@@ -33,5 +33,5 @@
 .hero:before { display: none; }
 
 /* sidebar matches the hero blue */
-.header { --background-color: #0f3a66; --nav-mobile-background-color: #0f3a66; background: linear-gradient(180deg, #12406e 0%, #0a5c93 100%); border-right: 1px solid rgba(255, 255, 255, .12); }
-@media (max-width: 1199px) { .header { background: #0f3a66; } }
+.header { --background-color: #17314f; --nav-mobile-background-color: #17314f; background: linear-gradient(180deg, #1a3552 0%, #183f60 100%); border-right: 1px solid rgba(255, 255, 255, .12); }
+@media (max-width: 1199px) { .header { background: #17314f; } }
