@@ -198,7 +198,7 @@ a { color: var(--accent-color); }
 .tech-bar .more i { transition: transform .3s; }
 .tech-bar .more[aria-expanded="true"] i { transform: rotate(45deg); }
 .tech-extra { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; max-height: 0; opacity: 0; overflow: hidden; transition: max-height .5s, opacity .4s, margin .4s; }
-.tech-extra.open { max-height: 140px; opacity: 1; margin-top: 12px; }
+.tech-extra.open { max-height: 200px; opacity: 1; margin-top: 12px; }
 .tech-extra li { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 50px; background: rgba(5, 12, 22, .78); border: 1px solid rgba(20, 157, 221, .4); color: #fff; font: 500 13px var(--nav-font); backdrop-filter: blur(8px); transform: translateY(8px); transition: transform .35s, background .25s; }
 .tech-extra.open li { transform: none; }
 .tech-extra.open li:nth-child(2) { transition-delay: .05s; } .tech-extra.open li:nth-child(3) { transition-delay: .1s; }
